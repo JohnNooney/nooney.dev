@@ -28,64 +28,66 @@ export default function Contact() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto"
+        className="max-w-6xl mx-auto"
       >
-        <h1 className="section-title">Get in Touch</h1>
+        <h1 className="section-title mb-12">Get in Touch</h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Contact Information */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-medium mb-2">Email</h3>
-                <a
-                  href="mailto:johnnoon74@gmail.com"
-                  className="text-primary hover:text-primary/80"
-                >
-                  johnnoon74@gmail.com
-                </a>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">Phone</h3>
-                <a
-                  href="tel:07305967405"
-                  className="text-primary hover:text-primary/80"
-                >
-                  07305967405
-                </a>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">Social</h3>
-                <div className="flex space-x-4">
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Contact Information</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">Email</h3>
                   <a
-                    href="https://github.com/JohnNooney"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-primary dark:text-gray-300"
+                    href="mailto:john@nooney.dev"
+                    className="text-primary hover:text-primary/80 text-base"
                   >
-                    GitHub
+                    john@nooney.dev
                   </a>
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">Phone</h3>
                   <a
-                    href="https://linkedin.com/in/john-nooney"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-primary dark:text-gray-300"
+                    href="tel:07305967405"
+                    className="text-primary hover:text-primary/80 text-base"
                   >
-                    LinkedIn
+                    07305967405
                   </a>
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">Social</h3>
+                  <div className="flex justify-center space-x-6">
+                    <a
+                      href="https://github.com/JohnNooney"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary dark:text-gray-300 text-base transition-colors duration-300"
+                    >
+                      GitHub
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/john-nooney"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary dark:text-gray-300 text-base transition-colors duration-300"
+                    >
+                      LinkedIn
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div>
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Name
                 </label>
@@ -96,14 +98,14 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Email
                 </label>
@@ -114,14 +116,14 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Message
                 </label>
@@ -132,13 +134,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full btn btn-primary"
+                className="w-full btn btn-primary py-3 text-base font-semibold rounded-lg hover:bg-primary/90 transition-colors duration-300"
               >
                 Send Message
               </button>
