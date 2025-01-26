@@ -4,22 +4,36 @@ import Link from '../components/Link';
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'A full-stack e-commerce platform with real-time inventory management and payment processing.',
+    title: 'Medical Practice Site',
+    description: 'A website for a client with a medical practice to display services and provide information about the practice.',
     image: '/project1.jpg',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    github: 'https://github.com/username/project1',
-    demo: 'https://project1-demo.com',
-    category: 'Full Stack',
+    technologies: ['React', 'Node.js', 'Firestore', 'Cloud Functions'],
+    demo: 'https://docmarenco.com',
+    category: 'Fullstack',
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team features.',
+    title: 'Game Guru',
+    description: 'An IOS application that uses AI to explain, setup, and manage collections of rule books for tabletop games.',
     image: '/project2.jpg',
-    technologies: ['Vue.js', 'Firebase', 'Tailwind CSS'],
-    github: 'https://github.com/username/project2',
+    technologies: ['SwiftUI', 'Firebase', 'OpenAI'],
     demo: 'https://project2-demo.com',
     category: 'Frontend',
+  },
+  {
+    title: 'Meeting Booker',
+    description: 'A WPF MVVM application that allows users to book meetings and view their schedule.',
+    image: '/project2.jpg',
+    technologies: ['WPF', '.NET', 'MVVM', 'MSSQL', 'Entity Framework'],
+    github: 'https://github.com/JohnNooney/BookMeetings',
+    category: 'Fullstack',
+  },
+  {
+    title: 'CSV Parser',
+    description: 'A tool to parse CSVs containing customer data and add them to a database via a Spring API.',
+    image: '/project2.jpg',
+    technologies: ['Spring', 'Java', 'PostgreSQL'],
+    github: 'https://github.com/JohnNooney/java-rest-app-demo',
+    category: 'Backend',
   },
   // Add more projects as needed
 ];
@@ -91,23 +105,27 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex space-x-4">
-                  <Link
-                    to={project.github}
-                    external
-                    variant="outline"
-                    className="flex-1 text-center"
-                  >
-                    View Code
-                  </Link>
-                  <Link
-                    to={project.demo}
-                    external
-                    variant="primary"
-                    className="flex-1 text-center"
-                  >
-                    Live Demo
-                  </Link>
+                <div className="flex justify-between gap-4 mt-4">
+                  {project.github && (
+                    <Link
+                      to={project.github}
+                      external
+                      variant="outline"
+                      className="flex-1 text-center"
+                    >
+                      View Code
+                    </Link>
+                  )}
+                  {project.demo && (
+                    <Link
+                      to={project.demo}
+                      external
+                      variant="primary"
+                      className="flex-1 text-center"
+                    >
+                      Live Demo
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>
