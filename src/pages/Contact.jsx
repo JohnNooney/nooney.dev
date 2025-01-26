@@ -141,7 +141,7 @@ export default function Contact() {
       >
         <h1 
           className="section-title mb-12 text-center text-4xl font-bold 
-          text-gray-900 dark:text-white"
+          text-gray-900 dark:text-white font-bold"
           aria-label="Contact Page"
         >
           Get in Touch

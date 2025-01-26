@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from '../components/Link';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Home() {
   const fadeIn = {
@@ -18,7 +19,14 @@ export default function Home() {
           transition={fadeIn.transition}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
-            Hi, I'm <span className="text-primary">John Nooney</span>
+            {' '}
+            <TypeAnimation
+              sequence={["Hi, I'm John Nooney", 1000]}
+              wrapper="span"
+              speed={20}
+              className="text-primary"
+              repeat={0}
+            />
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             Software Engineer passionate about building innovative solutions

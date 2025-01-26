@@ -56,7 +56,7 @@ export default function Skills() {
         transition={{ duration: 0.6 }}
         className="max-w-6xl mx-auto"
       >
-        <h1 className="section-title mb-12 text-center">Skills & Expertise</h1>
+        <h1 className="section-title mb-12 text-center font-bold">Skills & Expertise</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {skillCategories.map((category, categoryIndex) => (

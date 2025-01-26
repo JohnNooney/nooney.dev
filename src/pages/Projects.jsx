@@ -40,7 +40,7 @@ export default function Projects() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="section-title text-center mb-12">Projects</h1>
+        <h1 className="section-title text-center mb-12 font-bold">Projects</h1>
 
         {/* Category Filter */}
         <div className="flex justify-center space-x-4 mb-12">

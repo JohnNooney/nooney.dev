@@ -29,6 +29,15 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --accent-blue: #3b82f6;     /* Bright blue for headings */
+  --accent-blue-light: #60a5fa;   /* Lighter blue for hover or secondary headings */
+  --accent-blue-lighter: #93c5fd; /* Even lighter blue for backgrounds or subtle elements */
+  --accent-blue-dark: #2563eb;    /* Darker blue for active or emphasized headings */
+  --accent-blue-darker: #1d4ed8;  /* Darkest blue for strong emphasis or borders */
+  --accent-green: #10b981;    /* Emerald green for highlights */
+  --accent-purple: #8b5cf6;   /* Vibrant purple for links */
+  --accent-orange: #f97316;   /* Warm orange for emphasis */
 }
 
 body {
@@ -38,17 +47,34 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--accent-blue-lighter);  /* Blue color for h1 */
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.87); /* Green color for h2 */
+}
+
+h3 {
+  color: var(--accent-blue-light); /* Purple color for h3 */
+}
+
+p {
+  color: rgba(255, 255, 255, 0.87);  /* Keeping original white */
+}
+
+strong, em {
+  color: var(--accent-orange); /* Orange for strong and emphasized text */
+}
+
 a {
   font-weight: 500;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  color: var(--accent-green);
 }
 
 button {

@@ -10,7 +10,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="max-w-6xl mx-auto"
       >
-        <h1 className="section-title mb-12 text-center">About Me</h1>
+        <h1 className="section-title mb-12 text-center font-bold">About Me</h1>
         
         <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
           {/* Profile Image - Now visible on mobile and desktop */}
