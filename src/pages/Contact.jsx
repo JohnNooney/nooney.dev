@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { 
   EnvelopeIcon, 
   PhoneIcon, 
@@ -16,16 +17,38 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init({
+      publicKey: "l6WMltDz_y7fKLYoO", 
+    });
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate form data
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus('error');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus(null);
+
     try {
-      // TODO: Implement actual form submission logic
-      console.log('Form submitted:', formData);
-      // Simulate async submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      // Reset form after successful submission
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        "service_mwl0z5q",     
+        "template_6sa36mk",   
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message
+        }
+      );
+
+      // Clear form and set success status
       setFormData({ name: '', email: '', message: '' });
       setSubmitStatus('success');
     } catch (error) {
