@@ -4,10 +4,11 @@ const skillCategories = [
   {
     title: 'Languages',
     skills: [
-      { name: 'JavaScript', level: 90 },
-      { name: 'Python', level: 85 },
-      { name: 'Java', level: 80 },
+      { name: 'C#', level: 90 },
+      { name: 'Java', level: 90 },
+      { name: 'Python', level: 80 },
       { name: 'TypeScript', level: 75 },
+      { name: 'Swift', level: 60 },
     ],
   },
   {
@@ -15,17 +16,17 @@ const skillCategories = [
     skills: [
       { name: 'React', level: 90 },
       { name: 'HTML/CSS', level: 85 },
-      { name: 'Tailwind CSS', level: 80 },
-      { name: 'Next.js', level: 75 },
+      { name: 'WPF', level: 80 },
+      { name: 'SwiftUI', level: 60 },
     ],
   },
   {
     title: 'Backend',
     skills: [
       { name: 'Node.js', level: 85 },
-      { name: 'Express', level: 80 },
-      { name: 'Django', level: 75 },
-      { name: 'PostgreSQL', level: 70 },
+      { name: 'Spring', level: 90 },
+      { name: 'Express', level: 75 },
+      { name: 'PostgreSQL', level: 90 },
     ],
   },
   {
@@ -33,8 +34,9 @@ const skillCategories = [
     skills: [
       { name: 'Git', level: 90 },
       { name: 'Docker', level: 80 },
-      { name: 'AWS', level: 75 },
-      { name: 'Firebase', level: 85 },
+      { name: 'GCP', level: 75 },
+      { name: 'Jenkins', level: 85 },
+      { name: 'Kubernetes', level: 80 },
     ],
   },
 ];
