@@ -10,7 +10,7 @@ const experiences = [
       end: 'Present',
       duration: '4 months'
     },
-    description: 'Worked with the release Support team to bolster the release pipleine for 5 teams',
+    description: 'Worked with a release Support team to bolster the release process to production for 5 teams',
     achievements: [
       'Trained new team members on release management best practices',
       'Improved release predictability by 77% through multi-stage deployment process',
@@ -80,10 +80,10 @@ const experiences = [
     technologies: [
       'Java',
       '.NET',
-      'Microservices',
-      'CI/CD',
-      'Front-end Development',
-      'Event-Driven Architecture'
+      'Spring',
+      'Jenkins',
+      'Angular JS',
+      'Kafka'
     ],
     keyResponsibilities: [
       'Application architecture design',
