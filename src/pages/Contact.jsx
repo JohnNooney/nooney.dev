@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { 
   EnvelopeIcon, 
@@ -44,7 +44,7 @@ export default function Contact() {
     }));
   };
 
-  const ContactInfoItem = ({ icon: Icon, title, content, link, ariaLabel }) => (
+  const ContactInfoItem = useCallback(({ icon: Icon, title, content, link, ariaLabel }) => (
     <motion.div 
       className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
       initial={{ opacity: 0, y: 20 }}
@@ -67,9 +67,9 @@ export default function Contact() {
         {content}
       </a>
     </motion.div>
-  );
+  ), []);
 
-  const SocialLinks = () => (
+  const SocialLinks = useCallback(() => (
     <motion.div 
       className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
       initial={{ opacity: 0, y: 20 }}
@@ -129,7 +129,7 @@ export default function Contact() {
         </a>
       </div>
     </motion.div>
-  );
+  ), []);
 
   return (
     <div className="container mx-auto px-4 py-16">
