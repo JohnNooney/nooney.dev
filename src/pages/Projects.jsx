@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from '../components/Link';
 
 const projects = [
   {
@@ -39,7 +40,7 @@ export default function Projects() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="section-title">Projects</h1>
+        <h1 className="section-title text-center mb-12">Projects</h1>
 
         {/* Category Filter */}
         <div className="flex justify-center space-x-4 mb-12">
@@ -91,22 +92,22 @@ export default function Projects() {
                 </div>
 
                 <div className="flex space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
+                  <Link
+                    to={project.github}
+                    external
+                    variant="outline"
+                    className="flex-1 text-center"
                   >
                     View Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
+                  </Link>
+                  <Link
+                    to={project.demo}
+                    external
+                    variant="primary"
+                    className="flex-1 text-center"
                   >
                     Live Demo
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

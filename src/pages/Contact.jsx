@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Button from '../components/Button';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -7,11 +8,23 @@ export default function Contact() {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    try {
+      // TODO: Implement actual form submission logic
+      console.log('Form submitted:', formData);
+      // Simulate async submission
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Reset form after successful submission
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -30,11 +43,11 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
         className="max-w-6xl mx-auto"
       >
-        <h1 className="section-title mb-12">Get in Touch</h1>
+        <h1 className="section-title mb-12 text-center">Get in Touch</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-8 bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg">
             <div>
               <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Contact Information</h2>
               <div className="space-y-6">
@@ -42,7 +55,7 @@ export default function Contact() {
                   <h3 className="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">Email</h3>
                   <a
                     href="mailto:john@nooney.dev"
-                    className="text-primary hover:text-primary/80 text-base"
+                    className="text-primary-dark hover:text-primary transition-colors duration-300"
                   >
                     john@nooney.dev
                   </a>
@@ -51,7 +64,7 @@ export default function Contact() {
                   <h3 className="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">Phone</h3>
                   <a
                     href="tel:07305967405"
-                    className="text-primary hover:text-primary/80 text-base"
+                    className="text-primary-dark hover:text-primary transition-colors duration-300"
                   >
                     07305967405
                   </a>
@@ -63,7 +76,7 @@ export default function Contact() {
                       href="https://github.com/JohnNooney"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-primary dark:text-gray-300 text-base transition-colors duration-300"
+                      className="text-gray-600 hover:text-primary-dark dark:text-gray-300 text-base transition-colors duration-300"
                     >
                       GitHub
                     </a>
@@ -71,7 +84,7 @@ export default function Contact() {
                       href="https://linkedin.com/in/john-nooney"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-primary dark:text-gray-300 text-base transition-colors duration-300"
+                      className="text-gray-600 hover:text-primary-dark dark:text-gray-300 text-base transition-colors duration-300"
                     >
                       LinkedIn
                     </a>
@@ -82,7 +95,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
@@ -98,7 +111,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
                 />
               </div>
 
@@ -116,7 +129,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
                 />
               </div>
 
@@ -130,20 +143,22 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
+                  rows={4}
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
-                ></textarea>
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300 resize-none"
+                />
               </div>
 
-              <button
-                type="submit"
-                className="w-full btn btn-primary py-3 text-base font-semibold rounded-lg hover:bg-primary/90 transition-colors duration-300"
+              <Button 
+                type="submit" 
+                variant="primary"
+                disabled={isSubmitting}
+                className="w-full"
               >
-                Send Message
-              </button>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </Button>
             </form>
           </div>
         </div>

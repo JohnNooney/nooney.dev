@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Link from '../components/Link';
 
 export default function Home() {
   const fadeIn = {
@@ -27,13 +27,13 @@ export default function Home() {
           <div className="flex justify-center space-x-4 mb-12">
             <Link
               to="/contact"
-              className="btn btn-primary"
+              variant="primary"
             >
               Get in Touch
             </Link>
             <Link
               to="/projects"
-              className="btn bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
+              variant="secondary"
             >
               View Projects
             </Link>
