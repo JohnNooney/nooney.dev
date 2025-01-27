@@ -11,7 +11,7 @@ import Link from '../components/Link';
 export default function About() {
   return (
     <section className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -21,11 +21,6 @@ export default function About() {
             <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
               About Me
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-              I am a passionate Software Engineer with a strong foundation in both frontend and backend development.
-              My journey in software development has been driven by a curiosity to solve complex problems and create
-              meaningful solutions that impact users' lives.
-            </p>
           </div>
 
           <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
@@ -87,7 +82,7 @@ export default function About() {
           </div>
 
           {/* Call to Action Section */}
-          <div className="mt-16">
+          <div className="mt-20">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
               Explore My Journey
             </h2>
@@ -96,53 +91,73 @@ export default function About() {
               <Link 
                 to="/experience" 
                 variant="about"
-                className="flex flex-col items-center justify-center"
+                className="flex flex-col"
               >
-                <BriefcaseIcon className="h-12 w-12 mb-4 text-white" />
-                <span className="font-semibold text-lg mb-2">Professional Experience</span>
-                <br/>
-                <span className="text-sm opacity-80 text-center">
-                  Discover my career journey
-                </span>
+                <div className="flex flex-col items-center justify-center flex-grow">
+                  <BriefcaseIcon className="h-12 w-12 mt-4 mb-4 text-white" />
+                  <br/>
+                  <span className="font-semibold text-lg text-center">Professional Experience</span>
+                </div>
+
+                <div className="text-center mt-auto pb-4">
+                  <span className="text-sm opacity-80">
+                    Discover my career journey
+                  </span>
+                </div>
               </Link>
 
               <Link 
                 to="/skills" 
                 variant="about"
-                className="flex flex-col items-center justify-center"
+                className="flex flex-col"
               >
-                <CodeBracketIcon className="h-12 w-12 mb-4 text-white" />
-                <span className="font-semibold text-lg mb-2">Technical Skills</span>
-                <br/>
-                <span className="text-sm opacity-80 text-center">
-                  Explore my tech expertise
-                </span>
+                <div className="flex flex-col items-center justify-center flex-grow">
+                  <CodeBracketIcon className="h-12 w-12 mt-4 mb-4 text-white" />
+                  <br/>
+                  <span className="font-semibold text-lg text-center">Technical Skills</span>
+                </div>
+
+                <div className="text-center mt-auto pb-4">
+                  <span className="text-sm opacity-80">
+                    Explore my tech expertise
+                  </span>
+                </div>
               </Link>
 
               <Link 
                 to="/projects" 
                 variant="about"
-                className="flex flex-col items-center justify-center"
+                className="flex flex-col"
               >
-                <AcademicCapIcon className="h-12 w-12 mb-4 text-white" />
-                <span className="font-semibold text-lg mb-2">My Projects</span>
-                <br/>
-                <span className="text-sm opacity-80 text-center">
-                  See what I've built
-                </span>
+                <div className="flex flex-col items-center justify-center flex-grow">
+                  <AcademicCapIcon className="h-12 w-12 mt-4 mb-4 text-white" />
+                  <br/>
+                  <span className="font-semibold text-lg text-center">My Projects</span>
+                </div>
+
+                <div className="text-center mt-auto pb-4">
+                  <span className="text-sm opacity-80">
+                    See what I've built
+                  </span>
+                </div>
               </Link>
 
               <Link 
                 to="/contact" 
                 variant="about"
-                className="flex flex-col items-center justify-center"
+                className="flex flex-col"
               >
-                <EnvelopeIcon className="h-12 w-12 mb-4 text-white" />
-                <span className="font-semibold text-lg mb-2">Get in Touch</span>
+                <div className="flex flex-col items-center justify-center flex-grow">
+                  <EnvelopeIcon className="h-12 w-12 mt-4 mb-4 text-white" />
                 <br/>
-                <span className="text-sm opacity-80 text-center">
-                  Let's connect
-                </span>
+                  <span className="font-semibold text-lg text-center">Get in Touch</span>
+                </div>
+                
+                <div className="text-center mt-auto pb-4">
+                  <span className="text-sm opacity-80">
+                    Let's connect
+                  </span>
+                </div>
               </Link>
             </div>
           </div>

@@ -7,7 +7,7 @@ const linkVariants = {
   primary: 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600',
   outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
   ghost: 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light',
-  about: 'dark:bg-gray-800 bg-gradient-to-r from-primary to-primary-dark text-white hover:from-primary-light hover:to-primary w-full min-h-[200px] flex flex-col justify-center items-center text-center',
+  about: 'dark:bg-gray-700 bg-gradient-to-r  w-full min-h-[200px] flex flex-col p-6',
 };
 
 const Link = ({ 
@@ -49,31 +49,31 @@ const Link = ({
       to={to}
       {...props}
     >
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className={`
+        inline-block 
+        rounded-lg 
+        transition-all 
+        duration-300 
+          ${variant === 'about' ? 'w-full' : ''}
+      `}
+    >
+        <div
         className={`
           inline-block 
+            px-4 py-2 
           rounded-lg 
           transition-all 
           duration-300 
-          ${variant === 'about' ? 'w-full' : ''}
+          ${linkVariants[variant]} 
+          ${className}
         `}
       >
-        <div
-          className={`
-            inline-block 
-            px-4 py-2 
-            rounded-lg 
-            transition-all 
-            duration-300 
-            ${linkVariants[variant]} 
-            ${className}
-          `}
-        >
-          {children}
+        {children}
         </div>
-      </motion.div>
+    </motion.div>
     </RouterLink>
   );
 };
