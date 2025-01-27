@@ -3,8 +3,8 @@ import { Link as RouterLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const linkVariants = {
-  primary: 'bg-gradient-to-r from-primary to-primary-dark text-white hover:from-primary-light hover:to-primary',
-  secondary: 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600',
+  secondary: 'bg-gradient-to-r from-primary to-primary-dark text-white hover:from-primary-light hover:to-primary',
+  primary: 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600',
   outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
   ghost: 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light',
 };

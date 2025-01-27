@@ -9,7 +9,7 @@ const projects = [
     image: '/project1.jpg',
     technologies: ['React', 'Node.js', 'Firestore', 'Cloud Functions'],
     demo: 'https://docmarenco.com',
-    category: 'Fullstack',
+    category: 'Full Stack',
   },
   {
     title: 'Game Guru',
@@ -25,7 +25,7 @@ const projects = [
     image: '/project2.jpg',
     technologies: ['WPF', '.NET', 'MVVM', 'MSSQL', 'Entity Framework'],
     github: 'https://github.com/JohnNooney/BookMeetings',
-    category: 'Fullstack',
+    category: 'Full Stack',
   },
   {
     title: 'CSV Parser',
@@ -76,21 +76,27 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <motion.div
+            <motion.div 
               key={project.title}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-800"
+              transition={{ duration: 0.3 }}
             >
-              <div className="aspect-w-16 aspect-h-9 bg-gray-100 dark:bg-gray-700">
-                {/* Replace with actual project image */}
-                <div className="w-full h-48 bg-gray-200 dark:bg-gray-600" />
+              <div className="relative">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-48 object-cover bg-gray-200 dark:bg-gray-600"
+                />
               </div>
-
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+              
+              <div className="p-6 flex-grow flex flex-col">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  {project.title}
+                </h3>
+                
+                <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
                   {project.description}
                 </p>
 
@@ -105,7 +111,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex justify-between gap-4 mt-4">
+                <div className="flex justify-between gap-4">
                   {project.github && (
                     <Link
                       to={project.github}
