@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: 'Game Guru',
-    description: 'An IOS application that uses AI to explain, setup, and manage collections of rule books for tabletop games.',
+    description: 'Collaborated with Daniela Todorova to make an IOS application that uses AI to explain, setup, and manage collections of rule books for tabletop games.',
     image: '/project2.jpg',
     technologies: ['SwiftUI', 'Firebase', 'OpenAI'],
     demo: 'https://project2-demo.com',
