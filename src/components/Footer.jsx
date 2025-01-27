@@ -16,7 +16,7 @@ export default function Footer() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/john-nooney"
+              href="https://linkedin.com/in/johnnooney"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary dark:text-gray-300"
@@ -24,7 +24,7 @@ export default function Footer() {
               LinkedIn
             </a>
             <a
-              href="mailto:johnnoon74@gmail.com"
+              href="mailto:john@nooney.dev"
               className="text-gray-600 hover:text-primary dark:text-gray-300"
             >
               Email

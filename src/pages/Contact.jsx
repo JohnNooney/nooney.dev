@@ -129,7 +129,7 @@ export default function Contact() {
           <span>GitHub</span>
         </a>
         <a
-          href="https://linkedin.com/in/john-nooney"
+          href="https://linkedin.com/in/johnnooney"
           target="_blank"
           rel="noopener noreferrer"
           className="
