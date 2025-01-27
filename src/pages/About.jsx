@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import profilePic from '../assets/profile-pic.jpg';
 import { 
   AcademicCapIcon, 
   BriefcaseIcon, 
@@ -29,7 +28,7 @@ export default function About() {
               <div className="bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg max-w-xs w-full">
                 <div className="aspect-w-3 aspect-h-4">
                   <img 
-                    src={profilePic}
+                    src="/profile-pic.jpg"
                     alt="John Nooney" 
                     className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
                   />
