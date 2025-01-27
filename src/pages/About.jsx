@@ -42,10 +42,10 @@ export default function About() {
                 </h2>
                 <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-md">
                   <h3 className="text-xl font-medium text-gray-800 dark:text-gray-200 text-center md:text-left">
-                    Bachelor's in Computer Science
+                    Bachelor's (Hons) in Computer Science
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 text-center md:text-left">
-                    University of Example, 2020-2024
+                    University of Abertay, 2018-2022
                   </p>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export default function About() {
                   Interests
                 </h2>
                 <ul className="grid grid-cols-2 gap-4 text-gray-700 dark:text-gray-300">
-                  {['Web Development', 'Cloud Computing', 'Machine Learning', 'Open Source'].map((interest, index) => (
+                  {['Self Hosting', 'Cloud Computing', 'Machine Learning', 'Open Source'].map((interest, index) => (
                     <li key={index} className="flex items-center space-x-3 justify-center md:justify-start">
                       <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
