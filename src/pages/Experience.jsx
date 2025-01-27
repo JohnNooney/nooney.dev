@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Link from '../components/Link';
 
 const experiences = [
   {
@@ -158,7 +159,7 @@ export default function Experience() {
                     {' '}({experience.period.duration})
                   </p>
                   
-                  <p className="mt-4 text-gray-700 dark:text-gray-300 text-left mb-10">
+                  <p className="mt-4 text-gray-700 dark:text-gray-300 text-left mb-8">
                     {experience.description}
                   </p>
 
@@ -201,6 +202,23 @@ export default function Experience() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          <div className="flex justify-center mt-12 space-x-4">
+            <Link 
+              to="/projects" 
+              variant="primary" 
+              className="px-6 py-3"
+            >
+              Explore Projects
+            </Link>
+            <Link 
+              to="/skills" 
+              variant="secondary" 
+              className="px-6 py-3"
+            >
+              View My Skills
+            </Link>
           </div>
         </motion.div>
       </div>
