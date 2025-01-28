@@ -47,6 +47,7 @@ const Link = ({
   return (
     <RouterLink
       to={to}
+      onClick={() => document.querySelector('main').scrollTo(0, 0)}
       {...props}
     >
     <motion.div
