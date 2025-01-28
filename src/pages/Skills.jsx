@@ -5,49 +5,100 @@ const skillCategories = [
   {
     title: 'Languages',
     skills: [
-      { name: 'C#', level: 90 },
-      { name: 'Java', level: 90 },
-      { name: 'Python', level: 80 },
-      { name: 'TypeScript', level: 75 },
-      { name: 'Swift', level: 60 },
+      { 
+        name: 'C#', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg'
+      },
+      { 
+        name: 'Java', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
+      },
+      { 
+        name: 'Python', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
+      },
+      { 
+        name: 'TypeScript', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
+      },
+      { 
+        name: 'Swift', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg'
+      },
     ],
   },
   {
     title: 'Frontend',
     skills: [
-      { name: 'React', level: 90 },
-      { name: 'HTML/CSS', level: 85 },
-      { name: 'WPF', level: 80 },
-      { name: 'SwiftUI', level: 60 },
+      { 
+        name: 'React', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+      },
+      { 
+        name: 'HTML5', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
+      },
+      { 
+        name: 'CSS3', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+      },
+      { 
+        name: 'WPF', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg'
+      },
+      { 
+        name: 'SwiftUI', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg'
+      },
     ],
   },
   {
     title: 'Backend',
     skills: [
-      { name: 'Node.js', level: 85 },
-      { name: 'Spring', level: 90 },
-      { name: 'Express', level: 75 },
-      { name: 'PostgreSQL', level: 90 },
+      { 
+        name: 'Node.js', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+      },
+      { 
+        name: 'Spring', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg'
+      },
+      { 
+        name: 'Express', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
+      },
+      { 
+        name: 'PostgreSQL', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+      },
     ],
   },
   {
     title: 'Tools & Technologies',
     skills: [
-      { name: 'Git', level: 90 },
-      { name: 'Docker', level: 80 },
-      { name: 'GCP', level: 75 },
-      { name: 'Jenkins', level: 85 },
-      { name: 'Kubernetes', level: 80 },
+      { 
+        name: 'Git', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
+      },
+      { 
+        name: 'Docker', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+      },
+      { 
+        name: 'Google Cloud', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg'
+      },
+      { 
+        name: 'Jenkins', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg'
+      },
+      { 
+        name: 'Kubernetes', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'
+      },
     ],
   },
 ];
-
-// Helper function to determine progress bar color
-const getProgressBarColor = (level) => {
-  if (level < 40) return 'bg-red-500';
-  if (level < 70) return 'bg-yellow-500';
-  return 'bg-green-500';
-};
 
 export default function Skills() {
   return (
@@ -75,38 +126,25 @@ export default function Skills() {
                 <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white text-center">
                   {category.title}
                 </h2>
-                <div className="space-y-6">
+                <div className="grid grid-cols-3 gap-6">
                   {category.skills.map((skill, skillIndex) => (
-                    <div 
-                      key={skill.name} 
-                      className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg transition-all duration-300 hover:shadow-md"
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: skillIndex * 0.1 }}
+                      className="flex flex-col items-center justify-center p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:shadow-md transition-all duration-300"
+                      title={skill.name}
                     >
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-800 dark:text-gray-200 font-medium">
-                          {skill.name}
-                        </span>
-                        <span className="text-gray-600 dark:text-gray-400">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div 
-                        className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-600 overflow-hidden"
-                        role="progressbar"
-                        aria-valuenow={skill.level}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <motion.div
-                          className={`h-2.5 rounded-full ${getProgressBarColor(skill.level)}`}
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.level}%` }}
-                          transition={{ 
-                            duration: 1, 
-                            delay: categoryIndex * 0.1 + skillIndex * 0.05 
-                          }}
-                        />
-                      </div>
-                    </div>
+                      <img
+                        src={skill.icon}
+                        alt={`${skill.name} icon`}
+                        className="w-12 h-12 mb-2 transition-transform duration-300 hover:scale-110"
+                      />
+                      <span className="text-sm text-center text-gray-800 dark:text-gray-200">
+                        {skill.name}
+                      </span>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
