@@ -10,7 +10,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-y-auto">
+    <div className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto py-16">
         <motion.div
           className="text-center"
@@ -40,10 +40,10 @@ export default function Home() {
               Get in Touch
             </Link>
             <Link
-              to="/projects"
+              to="/about"
               variant="secondary"
             >
-              View Projects
+              About Me
             </Link>
           </div>
 
