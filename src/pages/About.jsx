@@ -22,7 +22,7 @@ export default function About() {
             </h1>
           </div>
 
-          <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
             {/* Profile Image - Now visible on mobile and desktop */}
             <div className="w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
               <div className="bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg max-w-xs w-full">
