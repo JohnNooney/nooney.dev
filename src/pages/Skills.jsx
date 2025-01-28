@@ -25,6 +25,10 @@ const skillCategories = [
         name: 'Swift', 
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg'
       },
+      {
+        name: 'C++',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg'
+      }
     ],
   },
   {
@@ -43,13 +47,17 @@ const skillCategories = [
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
       },
       { 
-        name: 'WPF', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg'
+        name: 'Flutter', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg'
       },
       { 
         name: 'SwiftUI', 
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg'
       },
+      {
+        name: 'Angular',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg'
+      }
     ],
   },
   {
@@ -71,6 +79,14 @@ const skillCategories = [
         name: 'PostgreSQL', 
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
       },
+      { 
+        name: '.NET', 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg'
+      },
+      {
+        name: 'Django',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg'
+      }
     ],
   },
   {
@@ -96,6 +112,10 @@ const skillCategories = [
         name: 'Kubernetes', 
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'
       },
+      {
+        name: 'Terraform',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg'
+      }
     ],
   },
 ];
