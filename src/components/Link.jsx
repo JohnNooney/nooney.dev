@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 
 const linkVariants = {
   secondary: 'bg-gradient-to-r from-primary to-primary-dark hover:from-primary-light hover:to-primary',
-  primary: 'bg-blue-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-gray-600',
+  primary: 'bg-blue-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-blue-400 dark:hover:bg-gray-600',
   outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
   ghost: 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light',
-  about: 'bg-blue-100 dark:bg-gray-700 w-full min-h-[200px] flex flex-col p-6 shadow-lg',
+  about: 'bg-white dark:bg-gray-700 w-full min-h-[200px] flex flex-col p-6 shadow-lg',
 };
 
 const Link = ({ 

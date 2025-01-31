@@ -125,7 +125,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
+    <section className="min-h-screen bg-sky-50 dark:bg-gray-900 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -147,7 +147,7 @@ export default function Experience() {
               >
                 <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-0" />
                 
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6">
                   <h3 className="text-2xl font-bold text-blue-500 dark:text-blue-300 text-left">
                     {experience.title}
                   </h3>

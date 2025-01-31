@@ -9,7 +9,7 @@ import Link from '../components/Link';
 
 export default function About() {
   return (
-    <section className="min-h-screen bg-gray-100 dark:bg-gray-900 py-16">
+    <section className="min-h-screen bg-sky-50 dark:bg-gray-900 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function About() {
             </div>
 
             {/* Content Section */}
-            <div className="w-full md:w-2/3 bg-gray-00 dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+            <div className="w-full md:w-2/3 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-center md:text-left">
                 I am a passionate Software Engineer with a strong foundation in both frontend and backend development.
                 My journey in software development has been driven by a curiosity to solve complex problems and create
@@ -50,7 +50,7 @@ export default function About() {
                   <h2 className="text-2xl font-semibold mb-4 text-center md:text-left dark:text-blue-300">
                     Education
                   </h2>
-                  <div className="bg-gray-200 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-md">
+                  <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-md">
                     <h3 className="text-xl font-medium text-blue-500 dark:text-blue-300 text-center md:text-left">
                       Bachelor's (Hons) in Computer Science
                     </h3>

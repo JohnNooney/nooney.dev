@@ -155,7 +155,7 @@ export default function Contact() {
   ), []);
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-16 bg-sky-50">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -172,7 +172,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div 
-            className="space-y-8 bg-primary/10 dark:bg-gray-800 p-8 rounded-xl shadow-lg"
+            className="space-y-8 bg-primary/10 dark:bg-gray-800 p-8 rounded-xl shadow-lg bg-gray-50"
             aria-label="Contact Details"
           >
             <div className="w-full max-w-md mx-auto">
@@ -182,7 +182,7 @@ export default function Contact() {
               >
                 Contact Information
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-6 ">
                 <ContactInfoItem 
                   icon={EnvelopeIcon}
                   title="Email"
@@ -203,7 +203,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+          <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg">
             <form 
               onSubmit={handleSubmit} 
               className="space-y-6"

@@ -10,7 +10,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-sky-50">
       <div className="w-full max-w-7xl mx-auto py-16">
         <motion.div
           className="text-center"
@@ -64,7 +64,7 @@ export default function Home() {
             ].map((skill, index) => (
               <motion.div
                 key={skill.title}
-                className="p-6 rounded-lg shadow-md bg-gray-100 dark:bg-gray-800"
+                className="p-6 rounded-lg shadow-md bg-white dark:bg-gray-800"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
