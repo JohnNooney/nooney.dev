@@ -78,7 +78,7 @@ export default function Contact() {
         <div className="bg-primary/10 dark:bg-gray-600 p-3 rounded-full">
           <Icon className="h-8 w-8 text-primary group-hover:text-primary-dark transition-colors" />
         </div>
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{title}</h3>
+        <h3 className="text-lg font-semibold text-blue-500 dark:text-blue-300">{title}</h3>
       </div>
       <a 
         href={link} 
@@ -103,7 +103,7 @@ export default function Contact() {
         <div className="bg-primary/10 dark:bg-gray-600 p-3 rounded-full">
           <GlobeAltIcon className="h-8 w-8 text-primary group-hover:text-primary-dark transition-colors" />
         </div>
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Social</h3>
+        <h3 className="text-lg font-semibold text-blue-500 dark:text-blue-300">Social</h3>
       </div>
       <div className="flex justify-center space-x-6">
         <a
@@ -163,9 +163,8 @@ export default function Contact() {
         className="max-w-6xl mx-auto"
       >
         <h1 
-          className="section-title mb-12 text-center text-4xl font-bold 
-          text-gray-900 dark:text-white font-bold"
-          aria-label="Contact Page"
+          className="section-title mb-12 text-center text-4xl font-bold text-blue-800 dark:text-blue-400"
+          aria-label="Contact Page" 
         >
           Get in Touch
         </h1>
@@ -178,7 +177,7 @@ export default function Contact() {
           >
             <div className="w-full max-w-md mx-auto">
               <h2 
-                className="text-2xl font-bold mb-8 text-primary dark:text-white text-center"
+                className="text-2xl font-bold mb-8 text-primary dark:text-blue-300 text-center"
                 aria-label="Contact Information Section"
               >
                 Contact Information

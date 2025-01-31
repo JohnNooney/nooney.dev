@@ -18,7 +18,7 @@ export default function Home() {
           animate={fadeIn.animate}
           transition={fadeIn.transition}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-blue-800 dark:text-blue-400">
             {' '}
             <TypeAnimation
               sequence={["Hi, I'm John Nooney", 1000]}
@@ -64,14 +64,14 @@ export default function Home() {
             ].map((skill, index) => (
               <motion.div
                 key={skill.title}
-                className="p-6 bg-white rounded-lg shadow-md dark:bg-gray-800"
+                className="p-6 rounded-lg shadow-md bg-gray-100 dark:bg-gray-800"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold mb-4 text-blue-500 dark:text-blue-300">
                   {skill.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="dark:text-gray-300">
                   {skill.description}
                 </p>
               </motion.div>

@@ -59,7 +59,7 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+          <h1 className="text-4xl font-bold text-center mb-12 text-blue-800 dark:text-blue-400">
             My Projects
           </h1>
 
@@ -101,7 +101,7 @@ export default function Projects() {
                 </div>
                 
                 <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-2xl font-bold text-blue-500 dark:text-blue-300 mb-4">
                     {project.title}
                   </h3>
                   
