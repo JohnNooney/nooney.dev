@@ -155,7 +155,7 @@ export default function Contact() {
   ), []);
 
   return (
-    <div className="container mx-auto px-4 py-16 bg-sky-50">
+    <div className="container mx-auto px-4 py-16 bg-sky-50 dark:bg-gray-900">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -203,7 +203,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+          <div className="p-8 rounded-xl shadow-lg bg-gray-50 dark:bg-gray-800">
             <form 
               onSubmit={handleSubmit} 
               className="space-y-6"
