@@ -99,7 +99,7 @@ export default function About() {
                 variants={fadeInUp}
                 initial="hidden"
                 animate={heroInView ? "visible" : "hidden"}
-                className="flex-grow"
+                className="flex-grow text-left md:text-center"
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                   Software Engineer
@@ -112,7 +112,7 @@ export default function About() {
                 </p>
                 <motion.div 
                   variants={stagger}
-                  className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                  className="flex flex-col sm:flex-row items-center justify-start md:justify-center gap-4"
                 >
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
