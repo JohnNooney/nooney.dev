@@ -1,20 +1,21 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import Link from '../components/Link';
 import { 
-  AcademicCapIcon, 
   BriefcaseIcon, 
-  CodeBracketIcon, 
+  CodeBracketIcon,
+  AcademicCapIcon,
   EnvelopeIcon 
 } from '@heroicons/react/24/solid';
-import Link from '../components/Link';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
   transition: { duration: 0.5 }
 };
 
 const stagger = {
-  animate: {
+  visible: {
     transition: {
       staggerChildren: 0.1
     }
@@ -23,7 +24,7 @@ const stagger = {
 
 const container = {
   hidden: { opacity: 0 },
-  show: {
+  visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.2
@@ -33,18 +34,29 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
+  visible: { opacity: 1, y: 0 }
 };
 
 export default function About() {
+  const heroRef = useRef(null);
+  const technicalRef = useRef(null);
+  const backgroundRef = useRef(null);
+  const ctaRef = useRef(null);
+
+  const heroInView = useInView(heroRef, { once: true, margin: "-100px" });
+  const technicalInView = useInView(technicalRef, { once: true, margin: "-100px" });
+  const backgroundInView = useInView(backgroundRef, { once: true, margin: "-100px" });
+  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
+
   return (
     <section className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial="hidden"
-          animate="show"
+          animate={heroInView ? "visible" : "hidden"}
           variants={container}
           className="text-center mb-16"
+          ref={heroRef}
         >
           <motion.h1 
             variants={item}
@@ -57,8 +69,9 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <motion.div
+            ref={heroRef}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6 }}
             className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-xl shadow-lg overflow-hidden mb-16"
           >
@@ -66,7 +79,7 @@ export default function About() {
               {/* Profile Image */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                animate={heroInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
                 className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 mb-8 md:mb-0 md:mr-16"
               >
@@ -84,8 +97,8 @@ export default function About() {
               {/* Introduction */}
               <motion.div
                 variants={fadeInUp}
-                initial="initial"
-                animate="animate"
+                initial="hidden"
+                animate={heroInView ? "visible" : "hidden"}
                 className="flex-grow"
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
@@ -126,8 +139,9 @@ export default function About() {
           <motion.div 
             variants={container}
             initial="hidden"
-            animate="show"
+            animate={technicalInView ? "visible" : "hidden"}
             className="space-y-16"
+            ref={technicalRef}
           >
             {/* Technical Focus Section */}
             <motion.section 
@@ -140,7 +154,7 @@ export default function About() {
               <motion.div 
                 variants={container}
                 initial="hidden"
-                animate="show"
+                animate={technicalInView ? "visible" : "hidden"}
                 className="grid md:grid-cols-2 gap-8"
               >
                 {[
@@ -177,7 +191,10 @@ export default function About() {
             {/* Background Section */}
             <motion.section 
               variants={item}
+              initial="hidden"
+              animate={backgroundInView ? "visible" : "hidden"}
               className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-12 rounded-xl shadow-lg"
+              ref={backgroundRef}
             >
               <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
                 Background
@@ -206,7 +223,7 @@ export default function About() {
                   <motion.div 
                     variants={container}
                     initial="hidden"
-                    animate="show"
+                    animate={backgroundInView ? "visible" : "hidden"}
                     className="grid grid-cols-2 gap-4"
                   >
                     {['Self Hosting', 'Cloud Computing', 'Machine Learning', 'Open Source'].map((interest, index) => (
@@ -227,85 +244,71 @@ export default function About() {
         </div>
 
         {/* Call to Action Section */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+        <motion.div 
+          className="mt-20"
+          initial="hidden"
+          animate={ctaInView ? "visible" : "hidden"}
+          variants={container}
+          ref={ctaRef}
+        >
+          <motion.h2 
+            variants={item}
+            className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+          >
             Explore My Journey
-          </h2>
+          </motion.h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            <Link 
-              to="/experience" 
-              variant="about"
-              className="flex flex-col"
-            >
-              <div className="flex flex-col items-center justify-center flex-grow">
-                <BriefcaseIcon className="h-12 w-12 mt-4 mb-4" />
-                <br/>
-                <span className="font-semibold text-lg text-center">Professional Experience</span>
-              </div>
-
-              <div className="text-center mt-auto pb-4">
-                <span className="text-sm opacity-80">
-                  Discover my career journey
-                </span>
-              </div>
-            </Link>
-
-            <Link 
-              to="/skills" 
-              variant="about"
-              className="flex flex-col"
-            >
-              <div className="flex flex-col items-center justify-center flex-grow">
-                <CodeBracketIcon className="h-12 w-12 mt-4 mb-4" />
-                <br/>
-                <span className="font-semibold text-lg text-center">Technical Skills</span>
-              </div>
-
-              <div className="text-center mt-auto pb-4">
-                <span className="text-sm opacity-80">
-                  Explore my tech expertise
-                </span>
-              </div>
-            </Link>
-
-            <Link 
-              to="/projects" 
-              variant="about"
-              className="flex flex-col"
-            >
-              <div className="flex flex-col items-center justify-center flex-grow">
-                <AcademicCapIcon className="h-12 w-12 mt-4 mb-4" />
-                <br/>
-                <span className="font-semibold text-lg text-center">My Projects</span>
-              </div>
-
-              <div className="text-center mt-auto pb-4">
-                <span className="text-sm opacity-80">
-                  See what I've built
-                </span>
-              </div>
-            </Link>
-
-            <Link 
-              to="/contact" 
-              variant="about"
-              className="flex flex-col"
-            >
-              <div className="flex flex-col items-center justify-center flex-grow">
-                <EnvelopeIcon className="h-12 w-12 mt-4 mb-4" />
-              <br/>
-                <span className="font-semibold text-lg text-center">Get in Touch</span>
-              </div>
-              
-              <div className="text-center mt-auto pb-4">
-                <span className="text-sm opacity-80">
-                  Let's connect
-                </span>
-              </div>
-            </Link>
-          </div>
-        </div>
+          <motion.div 
+            variants={container}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          >
+            {[
+              {
+                to: "/experience",
+                icon: <BriefcaseIcon className="h-12 w-12 mt-4 mb-4" />,
+                title: "Professional Experience",
+                subtitle: "Discover my career journey"
+              },
+              {
+                to: "/skills",
+                icon: <CodeBracketIcon className="h-12 w-12 mt-4 mb-4" />,
+                title: "Technical Skills",
+                subtitle: "Explore my tech expertise"
+              },
+              {
+                to: "/projects",
+                icon: <AcademicCapIcon className="h-12 w-12 mt-4 mb-4" />,
+                title: "My Projects",
+                subtitle: "See what I've built"
+              },
+              {
+                to: "/contact",
+                icon: <EnvelopeIcon className="h-12 w-12 mt-4 mb-4" />,
+                title: "Get in Touch",
+                subtitle: "Let's connect"
+              }
+            ].map((item, index) => (
+              <motion.div variants={item} key={item.to}>
+                <Link 
+                  to={item.to}
+                  variant="about"
+                  className="flex flex-col"
+                >
+                  <div className="flex flex-col items-center justify-center flex-grow">
+                    {item.icon}
+                    <br/>
+                    <span className="font-semibold text-lg text-center">{item.title}</span>
+                  </div>
+                  <div className="text-center mt-auto pb-4">
+                    <span className="text-sm opacity-80">
+                      {item.subtitle}
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
