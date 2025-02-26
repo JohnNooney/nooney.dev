@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { 
   EnvelopeIcon, 
-  PhoneIcon, 
-  GlobeAltIcon 
+  PhoneIcon 
 } from '@heroicons/react/24/solid';
 import Button from '../components/Button';
 
@@ -67,28 +66,27 @@ export default function Contact() {
     }));
   };
 
-  const ContactInfoItem = useCallback(({ icon: Icon, title, content, link, ariaLabel }) => (
+  const ContactInfoItem = useCallback(({ icon: Icon, content, link, ariaLabel }) => (
     <motion.div 
       className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex items-center mb-4 space-x-4">
+      <div className="flex items-center space-x-4">
         <div className="bg-primary/10 dark:bg-gray-600 p-3 rounded-full">
           <Icon className="h-8 w-8 text-primary group-hover:text-primary-dark transition-colors" />
         </div>
-        <h3 className="text-lg font-semibold text-blue-500 dark:text-blue-300">{title}</h3>
+        <a 
+          href={link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-600 dark:text-gray-300 hover:text-primary-dark dark:hover:text-primary transition-colors text-base font-medium"
+          aria-label={ariaLabel}
+        >
+          {content}
+        </a>
       </div>
-      <a 
-        href={link} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="text-gray-600 dark:text-gray-300 hover:text-primary-dark dark:hover:text-primary transition-colors text-base font-medium"
-        aria-label={ariaLabel}
-      >
-        {content}
-      </a>
     </motion.div>
   ), []);
 
@@ -99,12 +97,6 @@ export default function Contact() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      <div className="flex items-center mb-4 space-x-4">
-        <div className="bg-primary/10 dark:bg-gray-600 p-3 rounded-full">
-          <GlobeAltIcon className="h-8 w-8 text-primary group-hover:text-primary-dark transition-colors" />
-        </div>
-        <h3 className="text-lg font-semibold text-blue-500 dark:text-blue-300">Social</h3>
-      </div>
       <div className="flex justify-center space-x-6">
         <a
           href="https://github.com/JohnNooney"
@@ -185,14 +177,12 @@ export default function Contact() {
               <div className="space-y-6 ">
                 <ContactInfoItem 
                   icon={EnvelopeIcon}
-                  title="Email"
                   content="john@nooney.dev"
                   link="mailto:john@nooney.dev"
                   ariaLabel="Email: john@nooney.dev"
                 />
                 <ContactInfoItem 
                   icon={PhoneIcon}
-                  title="Phone"
                   content="07305967405"
                   link="tel:07305967405"
                   ariaLabel="Phone: 07305967405"
