@@ -12,7 +12,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      <div className="h-screen w-full flex flex-col bg-gray-50 dark:bg-gray-900 overflow-hidden">
+      <div className="min-h-screen w-full flex flex-col bg-gray-50 dark:bg-gray-900">
         <Helmet>
           <title>John Nooney - Software Engineer</title>
           <meta name="description" content="Professional portfolio of John Nooney, showcasing software engineering skills, experience, and projects." />
@@ -21,7 +21,7 @@ function App() {
         
         <Navbar />
         
-        <main className="flex-grow w-full overflow-y-auto">
+        <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
