@@ -22,61 +22,127 @@ export default function About() {
             </h1>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            {/* Profile Image */}
-            <div className="w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
-              <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg max-w-xs w-full">
-                <div className="aspect-w-3 aspect-h-4">
-                  <img 
-                    src="/profile-pic.jpg"
-                    alt="John Nooney" 
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
-                  />
+          <div className="max-w-7xl mx-auto">
+            {/* Hero Section */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-16">
+              <div className="flex flex-col md:flex-row items-center p-12">
+                {/* Profile Image */}
+                <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 mb-8 md:mb-0 md:mr-16">
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400">
+                    <img 
+                      src="/profile-pic.jpg"
+                      alt="John Nooney" 
+                      className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="flex-grow">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                    Software Engineer
+                  </h2>
+                  <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+                    A versatile Software Engineer with 4+ years of experience transforming complex enterprise 
+                    solutions. I specialize in cloud architecture, DevOps practices, and full-stack development,
+                    with a proven track record of increasing deployment efficiency by 200% and improving release 
+                    predictability by 77%.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Link
+                      to="/experience"
+                      className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white transition-colors duration-200"
+                    >
+                      View Experience
+                    </Link>
+                    <Link
+                      to="/projects"
+                      className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                    >
+                      See Projects
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Content Section */}
-            <div className="w-full md:w-2/3 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-center md:text-left">
-                I am a passionate Software Engineer with a strong foundation in both frontend and backend development.
-                My journey in software development has been driven by a curiosity to solve complex problems and create
-                meaningful solutions that impact users' lives.
-              </p>
-
-              <div className="space-y-8">
-                {/* Education Section */}
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4 text-center md:text-left text-gray-900 dark:text-white">
-                    Education
-                  </h2>
-                  <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-md">
-                    <h3 className="text-xl font-medium text-blue-600 dark:text-blue-400 text-center md:text-left">
-                      Bachelor's (Hons) in Computer Science
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-center md:text-left">
-                      University of Abertay, 2018-2022
-                    </p>
+            {/* Main Content */}
+            <div className="space-y-16">
+              {/* Technical Focus Section */}
+              <section className="bg-white dark:bg-gray-800 p-12 rounded-xl shadow-lg">
+                <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+                  Technical Focus
+                </h2>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
+                      <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Cloud & DevOps</h3>
+                      <p className="text-gray-700 dark:text-gray-300 text-lg">
+                        Expertise in GCP, Kubernetes, and Terraform, with a focus on automated deployment pipelines and 
+                        cloud-native solutions.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
+                      <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Architecture</h3>
+                      <p className="text-gray-700 dark:text-gray-300 text-lg">
+                        Specialized in transforming monolithic applications into scalable microservices using 
+                        event-driven patterns.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
+                      <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Backend Development</h3>
+                      <p className="text-gray-700 dark:text-gray-300 text-lg">
+                        Strong foundation in Java Spring, .NET, and Node.js, building robust and scalable APIs.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
+                      <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Frontend Development</h3>
+                      <p className="text-gray-700 dark:text-gray-300 text-lg">
+                        Experience with modern frameworks like React and Angular, creating responsive user interfaces.
+                      </p>
+                    </div>
                   </div>
                 </div>
+              </section>
 
-                {/* Interests Section */}
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4 text-center md:text-left text-gray-900 dark:text-white">
-                    Interests
-                  </h2>
-                  <ul className="grid grid-cols-2 gap-4 text-gray-700 dark:text-gray-300">
-                    {['Self Hosting', 'Cloud Computing', 'Machine Learning', 'Open Source'].map((interest, index) => (
-                      <li key={index} className="flex items-center space-x-3 justify-center md:justify-start">
-                        <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
-                        </svg>
-                        <span>{interest}</span>
-                      </li>
-                    ))}
-                  </ul>
+              {/* Background Section */}
+              <section className="bg-white dark:bg-gray-800 p-12 rounded-xl shadow-lg">
+                <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+                  Background
+                </h2>
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                      Education
+                    </h3>
+                    <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
+                      <h4 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
+                        Bachelor's (Hons) in Computer Science
+                      </h4>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        University of Abertay, 2018-2022
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                      Interests
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      {['Self Hosting', 'Cloud Computing', 'Machine Learning', 'Open Source'].map((interest, index) => (
+                        <div 
+                          key={index} 
+                          className="bg-gray-50 dark:bg-gray-700 p-4 rounded-xl flex items-center justify-center text-center text-gray-700 dark:text-gray-300"
+                        >
+                          {interest}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </section>
             </div>
           </div>
 
