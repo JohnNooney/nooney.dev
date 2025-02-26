@@ -49,7 +49,7 @@ export default function About() {
   const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16 relative overflow-hidden">
+    <section className="min-h-screen bg-gray-100 dark:bg-gray-900 py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial="hidden"
@@ -73,7 +73,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-xl shadow-lg overflow-hidden mb-16"
+            className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg rounded-xl shadow-lg overflow-hidden mb-16"
           >
             <div className="flex flex-col md:flex-row items-center p-12">
               {/* Profile Image */}
@@ -117,7 +117,7 @@ export default function About() {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       to="/experience"
-                      className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white transition-all duration-200 shadow-lg hover:shadow-xl"
+                      className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white transition-all duration-200 shadow-md hover:shadow-xl"
                     >
                       View Experience
                     </Link>
@@ -125,7 +125,7 @@ export default function About() {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       to="/projects"
-                      className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                      className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-md hover:shadow-xl"
                     >
                       See Projects
                     </Link>
@@ -146,7 +146,7 @@ export default function About() {
             {/* Technical Focus Section */}
             <motion.section 
               variants={item}
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-12 rounded-xl shadow-lg"
+              className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-12 rounded-xl shadow-lg"
             >
               <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
                 Technical Focus
@@ -179,7 +179,7 @@ export default function About() {
                     key={focus.title}
                     variants={item}
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white/60 dark:bg-gray-700/60 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+                    className="bg-gray-50/80 dark:bg-gray-700/60 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
                   >
                     <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">{focus.title}</h3>
                     <p className="text-gray-700 dark:text-gray-300 text-lg">{focus.description}</p>
@@ -193,7 +193,7 @@ export default function About() {
               variants={item}
               initial="hidden"
               animate={backgroundInView ? "visible" : "hidden"}
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-12 rounded-xl shadow-lg"
+              className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-12 rounded-xl shadow-lg"
               ref={backgroundRef}
             >
               <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
@@ -206,7 +206,7 @@ export default function About() {
                   </h3>
                   <motion.div 
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white/60 dark:bg-gray-700/60 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+                    className="bg-gray-50/80 dark:bg-gray-700/60 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
                   >
                     <h4 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
                       Bachelor's (Hons) in Computer Science
@@ -231,7 +231,7 @@ export default function About() {
                         key={index}
                         variants={item}
                         whileHover={{ scale: 1.05 }}
-                        className="bg-white/60 dark:bg-gray-700/60 p-4 rounded-xl flex items-center justify-center text-center text-gray-700 dark:text-gray-300 shadow-md hover:shadow-lg transition-all duration-200"
+                        className="bg-gray-50/80 dark:bg-gray-700/60 p-4 rounded-xl flex items-center justify-center text-center text-gray-700 dark:text-gray-300 shadow-sm hover:shadow-md transition-all duration-200"
                       >
                         {interest}
                       </motion.div>

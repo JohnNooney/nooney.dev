@@ -31,24 +31,53 @@ nooney.dev/
 
 ## Style Guidelines
 
-### Color Scheme
-- **Light Mode**
-  - Background: `bg-gray-50`
-  - Cards/Containers: `bg-white`
-  - Text:
-    - Headers: `text-blue-800`
-    - Body: `text-gray-700`
-    - Links: `text-gray-700` → `hover:text-blue-600`
-  - Accents: `text-blue-600`
+### Visual Hierarchy and Layering
 
-- **Dark Mode**
-  - Background: `bg-gray-900`
-  - Cards/Containers: `bg-gray-800`
-  - Text:
-    - Headers: `text-blue-400`
-    - Body: `text-gray-300`
-    - Links: `text-gray-300` → `hover:text-blue-400`
-  - Accents: `text-blue-500`
+#### Base Layer (Background)
+- Light theme: `bg-gray-100`
+- Dark theme: `bg-gray-900`
+
+#### Primary Cards (Main Sections)
+```jsx
+<div className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg rounded-xl shadow-lg">
+  {/* Primary content */}
+</div>
+```
+- Light theme: `bg-white/95` with `backdrop-blur-lg`
+- Dark theme: `bg-gray-800/80` with `backdrop-blur-lg`
+- Shadow: `shadow-lg`
+- Corners: `rounded-xl`
+- Hover: `hover:shadow-xl`
+
+#### Secondary Cards (Nested Elements)
+```jsx
+<div className="bg-gray-50/80 dark:bg-gray-700/60 rounded-xl shadow-sm">
+  {/* Secondary content */}
+</div>
+```
+- Light theme: `bg-gray-50/80`
+- Dark theme: `bg-gray-700/60`
+- Shadow: `shadow-sm`
+- Hover: `hover:shadow-md`
+
+#### Interactive Elements
+```jsx
+<input className="bg-gray-50/80 dark:bg-gray-700/60 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+```
+- Background follows Secondary Card guidelines
+- Focus states use ring effects
+- Transitions: `transition-all duration-200`
+
+### Color Scheme
+- **Primary Colors**
+  - Blue (accent): `text-blue-600` dark:`text-blue-400`
+  - Gray (text): `text-gray-700` dark:`text-gray-300`
+
+- **Text Colors**
+  - Headers: `text-gray-900` dark:`text-white`
+  - Body: `text-gray-700` dark:`text-gray-300`
+  - Links: `text-gray-700` → `hover:text-blue-600`
+  - Accents: `text-blue-600` dark:`text-blue-400`
 
 ### Typography
 - Headers: `text-4xl font-bold`
@@ -59,47 +88,48 @@ nooney.dev/
 ### Components
 
 #### Buttons
-- Primary: `bg-blue-600 text-white hover:bg-blue-700`
-- Secondary: `bg-gray-100 text-gray-800 hover:bg-gray-200`
-- Outline: `border-2 border-gray-600 text-gray-800 hover:bg-gray-600 hover:text-white`
-- Ghost: `text-gray-700 hover:text-blue-600`
-
-#### Cards
+Primary Button:
 ```jsx
-<div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
-  {/* Card content */}
-</div>
+<button className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white transition-all duration-200 shadow-md hover:shadow-xl">
+  Button Text
+</button>
 ```
 
-#### Links
+Secondary Button:
 ```jsx
-<Link
-  variant="primary|secondary|outline|ghost|about"
-  to="/path"
-  className="additional-classes"
->
-  Link Text
-</Link>
+<button className="px-8 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-md hover:shadow-xl">
+  Button Text
+</button>
 ```
 
-### Page Structure
+#### Page Structure
 Each page should follow this basic structure:
 ```jsx
-<section className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+<section className="min-h-screen bg-gray-100 dark:bg-gray-900 py-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <h1 className="text-4xl font-bold text-blue-800 dark:text-blue-400">
-        Page Title
-      </h1>
-      {/* Page content */}
+      <div className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg rounded-xl shadow-lg p-12">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+          Page Title
+        </h1>
+        {/* Page content */}
+      </div>
     </motion.div>
   </div>
 </section>
 ```
+
+### Animation Guidelines
+- Use Framer Motion for animations
+- Page transitions: Fade in with slight y-offset
+- Hover effects: Scale between 1.02-1.05
+- Button clicks: Scale down to 0.95
+- Transitions: 200-300ms duration
+- Use `backdrop-blur-lg` for depth
 
 ## Page Descriptions
 
