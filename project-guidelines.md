@@ -123,6 +123,85 @@ Each page should follow this basic structure:
 </section>
 ```
 
+### Spacing Guidelines
+
+#### Container Padding
+- **Page Sections**: `py-16` for vertical padding
+- **Primary Cards**: `p-16` for desktop, `p-8` for mobile
+- **Secondary Cards**: `p-8` for desktop, `p-6` for mobile
+- **Interactive Elements**: `px-8 py-3` for buttons
+
+#### Margins and Gaps
+- **Section Margins**: `mb-16` between major sections
+- **Content Spacing**:
+  - Large gaps (between sections): `space-y-8` or `gap-8`
+  - Medium gaps (between related items): `space-y-6` or `gap-6`
+  - Small gaps (between text elements): `space-y-4` or `gap-4`
+  - Minimal gaps (between tight elements): `space-y-2` or `gap-2`
+
+#### Text Spacing
+- **Headers**: `mb-8` after main headers
+- **Subheaders**: `mb-6` after subheaders
+- **Paragraphs**: `mb-4` between paragraphs
+- **List Items**: `space-y-2` between items
+- **Line Height**:
+  - Headers: `leading-tight`
+  - Body Text: `leading-relaxed`
+  - Large Text: `leading-loose`
+
+#### Responsive Spacing
+```jsx
+// Example of responsive container
+<div className="p-6 sm:p-8 md:p-12 lg:p-16">
+  {/* Content */}
+</div>
+
+// Example of responsive margins
+<div className="mb-8 md:mb-12 lg:mb-16">
+  {/* Content */}
+</div>
+
+// Example of responsive grid/flex gaps
+<div className="space-y-4 sm:space-y-0 sm:space-x-6">
+  {/* Content */}
+</div>
+```
+
+#### Fixed Dimensions
+- **Buttons**: `w-64` (256px) width
+- **Icons**: 
+  - Small: `w-6 h-6`
+  - Medium: `w-8 h-8`
+  - Large: `w-12 h-12`
+- **Container Max Width**: `max-w-7xl`
+- **Content Max Width**: `max-w-2xl` for readable text blocks
+
+#### Grid and Flex Layouts
+```jsx
+// Grid layout with responsive gaps
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+  {/* Grid items */}
+</div>
+
+// Flex layout with responsive spacing
+<div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+  {/* Flex items */}
+</div>
+```
+
+#### Component-Specific Rules
+- **Navigation**: `px-4 py-2` for nav items
+- **Cards**: 
+  - Outer padding: `p-8`
+  - Inner content: `space-y-4`
+  - Between cards: `gap-8`
+- **Forms**:
+  - Between fields: `space-y-6`
+  - Label to input: `mb-2`
+  - Input padding: `px-4 py-2`
+
+These spacing guidelines ensure consistent rhythm and hierarchy across the application while maintaining responsiveness and readability.
+
 ### Animation Guidelines
 - Use Framer Motion for animations
 - Page transitions: Fade in with slight y-offset
