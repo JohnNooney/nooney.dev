@@ -41,10 +41,8 @@ export default function Navbar() {
                 <circle 
                   cx="20" 
                   cy="20" 
-                  r="19" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  className="text-gray-900 dark:text-gray-100"
+                  r="20" 
+                  className="fill-blue-800 dark:fill-blue-400"
                 />
                 <path 
                   d="M16 12L10 20L16 28" 
@@ -52,7 +50,7 @@ export default function Navbar() {
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
-                  className="text-blue-600 dark:text-blue-400"
+                  className="text-white dark:text-gray-900"
                 />
                 <path 
                   d="M24 12L30 20L24 28" 
@@ -60,14 +58,14 @@ export default function Navbar() {
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
-                  className="text-blue-600 dark:text-blue-400"
+                  className="text-white dark:text-gray-900"
                 />
                 <path 
                   d="M21 14L19 26" 
                   stroke="currentColor" 
                   strokeWidth="2" 
                   strokeLinecap="round" 
-                  className="text-blue-600 dark:text-blue-400"
+                  className="text-white dark:text-gray-900"
                 />
               </svg>
               <span 
