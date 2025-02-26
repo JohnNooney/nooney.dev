@@ -9,7 +9,7 @@ import Link from '../components/Link';
 
 export default function About() {
   return (
-    <section className="min-h-screen bg-sky-50 dark:bg-gray-900 py-16">
+    <section className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,9 +23,9 @@ export default function About() {
           </div>
 
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            {/* Profile Image - Now visible on mobile and desktop */}
+            {/* Profile Image */}
             <div className="w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
-              <div className="bg-gray-300 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg max-w-xs w-full">
+              <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg max-w-xs w-full">
                 <div className="aspect-w-3 aspect-h-4">
                   <img 
                     src="/profile-pic.jpg"
@@ -47,11 +47,11 @@ export default function About() {
               <div className="space-y-8">
                 {/* Education Section */}
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4 text-center md:text-left dark:text-blue-300">
+                  <h2 className="text-2xl font-semibold mb-4 text-center md:text-left text-gray-900 dark:text-white">
                     Education
                   </h2>
-                  <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-md">
-                    <h3 className="text-xl font-medium text-blue-500 dark:text-blue-300 text-center md:text-left">
+                  <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-md">
+                    <h3 className="text-xl font-medium text-blue-600 dark:text-blue-400 text-center md:text-left">
                       Bachelor's (Hons) in Computer Science
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 text-center md:text-left">
@@ -62,13 +62,13 @@ export default function About() {
 
                 {/* Interests Section */}
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4 text-center md:text-left dark:text-blue-300">
+                  <h2 className="text-2xl font-semibold mb-4 text-center md:text-left text-gray-900 dark:text-white">
                     Interests
                   </h2>
                   <ul className="grid grid-cols-2 gap-4 text-gray-700 dark:text-gray-300">
                     {['Self Hosting', 'Cloud Computing', 'Machine Learning', 'Open Source'].map((interest, index) => (
                       <li key={index} className="flex items-center space-x-3 justify-center md:justify-start">
-                        <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
                         </svg>
                         <span>{interest}</span>
@@ -82,7 +82,7 @@ export default function About() {
 
           {/* Call to Action Section */}
           <div className="mt-20">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-blue-300">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
               Explore My Journey
             </h2>
             

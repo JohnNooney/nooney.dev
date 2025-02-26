@@ -30,7 +30,7 @@ export default function Navbar() {
               aria-label="Home"
             >
               <span 
-                className="text-xl font-bold text-primary group-hover:text-primary-dark 
+                className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400
                 transition-colors duration-300"
               >
                 John Nooney
@@ -53,17 +53,17 @@ export default function Navbar() {
                 className={`
                   relative px-3 py-2 rounded-lg text-sm font-medium 
                   transition-all duration-300 group
-                  focus:outline-none focus:ring-2 focus:ring-primary
+                  focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400
                   ${location.pathname === item.path
-                    ? 'text-primary font-semibold bg-primary/10 ring-2 ring-primary/20' 
-                    : 'text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary'
+                    ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-gray-700' 
+                    : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
                   }
                 `}
               >
                 {item.name}
                 {location.pathname === item.path && (
                   <span 
-                    className="absolute bottom-0 left-0 w-full h-1 bg-primary 
+                    className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 dark:bg-blue-400
                       rounded-full transition-all duration-300"
                     aria-hidden="true"
                   />
@@ -81,8 +81,8 @@ export default function Navbar() {
               aria-label="Toggle mobile menu"
               className="
                 inline-flex items-center justify-center p-2 rounded-md 
-                text-gray-600 hover:text-primary dark:text-gray-300
-                focus:outline-none focus:ring-2 focus:ring-primary
+                text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400
+                focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400
               "
             >
               <span className="sr-only">Open main menu</span>
@@ -117,17 +117,17 @@ export default function Navbar() {
                 className={`
                   block px-3 py-2 rounded-lg text-base font-medium 
                   transition-all duration-300 relative group
-                  focus:outline-none focus:ring-2 focus:ring-primary
+                  focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400
                   ${location.pathname === item.path
-                    ? 'text-primary font-semibold bg-primary/10 ring-2 ring-primary/20' 
-                    : 'text-gray-600 hover:text-primary hover:bg-primary/10 dark:text-gray-300 dark:hover:text-primary'
+                    ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-gray-700' 
+                    : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
                   }
                 `}
               >
                 {item.name}
                 {location.pathname === item.path && (
                   <span 
-                    className="absolute bottom-0 left-0 w-full h-1 bg-primary 
+                    className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 dark:bg-blue-400
                       rounded-full transition-all duration-300"
                     aria-hidden="true"
                   />

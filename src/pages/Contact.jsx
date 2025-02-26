@@ -147,7 +147,7 @@ export default function Contact() {
   ), []);
 
   return (
-    <div className="container mx-auto px-4 py-16 bg-sky-50 dark:bg-gray-900">
+    <div className="container mx-auto px-4 py-16 bg-gray-50 dark:bg-gray-900">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -164,17 +164,17 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div 
-            className="space-y-8 bg-primary/10 dark:bg-gray-800 p-8 rounded-xl shadow-lg bg-gray-50"
+            className="space-y-8 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg"
             aria-label="Contact Details"
           >
             <div className="w-full max-w-md mx-auto">
               <h2 
-                className="text-2xl font-bold mb-8 text-primary dark:text-blue-300 text-center"
+                className="text-2xl font-bold mb-8 text-gray-900 dark:text-white text-center"
                 aria-label="Contact Information Section"
               >
                 Contact Information
               </h2>
-              <div className="space-y-6 ">
+              <div className="space-y-6">
                 <ContactInfoItem 
                   icon={EnvelopeIcon}
                   content="john@nooney.dev"
@@ -193,15 +193,11 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="p-8 rounded-xl shadow-lg bg-gray-50 dark:bg-gray-800">
-            <form 
-              onSubmit={handleSubmit} 
-              className="space-y-6"
-              aria-label="Contact Form"
-            >
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label
-                  htmlFor="name"
+                <label 
+                  htmlFor="name" 
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Name
@@ -212,16 +208,16 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
+                           bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                           focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent"
                   required
-                  aria-required="true"
-                  placeholder="Your full name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
+                <label 
+                  htmlFor="email" 
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Email
@@ -232,16 +228,16 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
+                           bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                           focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent"
                   required
-                  aria-required="true"
-                  placeholder="you@example.com"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
+                <label 
+                  htmlFor="message" 
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Message
@@ -249,14 +245,14 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  rows={4}
                   value={formData.message}
                   onChange={handleChange}
+                  rows="4"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
+                           bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                           focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent"
                   required
-                  aria-required="true"
-                  placeholder="Your message here..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-300 resize-none"
-                />
+                ></textarea>
               </div>
 
               {submitStatus === 'success' && (

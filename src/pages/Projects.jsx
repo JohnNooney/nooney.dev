@@ -72,7 +72,7 @@ export default function Projects() {
                 className={`
                   px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
                   ${selectedCategory === category 
-                    ? 'bg-primary text-white' 
+                    ? 'bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 dark:hover:bg-blue-600' 
                     : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                   }
                 `}

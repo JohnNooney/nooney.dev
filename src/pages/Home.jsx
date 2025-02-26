@@ -10,7 +10,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-sky-50 dark:bg-gray-900">
+    <div className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-7xl mx-auto py-16">
         <motion.div
           className="text-center"
@@ -18,17 +18,17 @@ export default function Home() {
           animate={fadeIn.animate}
           transition={fadeIn.transition}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-blue-800 dark:text-blue-400">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
             {' '}
             <TypeAnimation
               sequence={["Hi, I'm John Nooney", 1000]}
               wrapper="span"
               speed={20}
-              className="text-primary"
+              className="text-blue-600 dark:text-blue-400"
               repeat={0}
             />
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             Software Engineer passionate about building innovative solutions
           </p>
           
@@ -64,14 +64,14 @@ export default function Home() {
             ].map((skill, index) => (
               <motion.div
                 key={skill.title}
-                className="p-6 rounded-lg shadow-md bg-white dark:bg-gray-800"
+                className="p-6 rounded-lg shadow-md bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-blue-500 dark:text-blue-300">
+                <h3 className="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">
                   {skill.title}
                 </h3>
-                <p className="dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300">
                   {skill.description}
                 </p>
               </motion.div>
