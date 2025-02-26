@@ -52,8 +52,7 @@ export default function Navbar() {
                 aria-current={location.pathname === item.path ? 'page' : undefined}
                 className={`
                   relative px-3 py-2 rounded-lg text-sm font-medium 
-                  transition-all duration-300 group
-                  focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400
+                  transition-all duration-300 group focus:outline-none
                   ${location.pathname === item.path
                     ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-gray-700' 
                     : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
@@ -116,8 +115,7 @@ export default function Navbar() {
                 }}
                 className={`
                   block px-3 py-2 rounded-lg text-base font-medium 
-                  transition-all duration-300 relative group
-                  focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400
+                  transition-all duration-300 relative group focus:outline-none
                   ${location.pathname === item.path
                     ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-gray-700' 
                     : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
