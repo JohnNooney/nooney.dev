@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from '../components/Link';
+import medicalSiteMockup from '../assets/medical-site-desktop-mockup.png';
 
 const projects = [
   {
     title: 'Medical Practice Site',
     description: 'A website for a client with a medical practice to display services and provide information about the practice.',
-    image: '/project1.jpg',
+    image: medicalSiteMockup,
     technologies: ['React', 'Node.js', 'Firestore', 'Cloud Functions'],
     demo: 'https://docmarenco.com',
     category: 'Full Stack',
@@ -92,11 +93,11 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative">
+                <div className="relative h-70">
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-48 object-cover bg-gray-200 dark:bg-gray-600"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 
