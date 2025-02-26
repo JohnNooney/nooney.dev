@@ -1,0 +1,13 @@
+# https://nooney.dev/robots.txt
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nooney.dev/sitemap.xml
+
+# Prevent caching of API routes
+Disallow: /api/
+
+# Rate limiting for good bots
+Crawl-delay: 1
