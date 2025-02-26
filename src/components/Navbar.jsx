@@ -29,6 +29,47 @@ export default function Navbar() {
               className="flex items-center group"
               aria-label="Home"
             >
+              <svg 
+                width="40" 
+                height="40" 
+                viewBox="0 0 40 40" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="mr-2"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <circle 
+                  cx="20" 
+                  cy="20" 
+                  r="19" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  className="text-gray-900 dark:text-gray-100"
+                />
+                <path 
+                  d="M16 12L10 20L16 28" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  className="text-blue-600 dark:text-blue-400"
+                />
+                <path 
+                  d="M24 12L30 20L24 28" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  className="text-blue-600 dark:text-blue-400"
+                />
+                <path 
+                  d="M21 14L19 26" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  className="text-blue-600 dark:text-blue-400"
+                />
+              </svg>
               <span 
                 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400
                 transition-colors duration-300"
