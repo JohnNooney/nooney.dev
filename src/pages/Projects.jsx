@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from '../components/Link';
-import medicalSiteMockup from '../assets/medical-site-desktop-mockup.png';
+import medicalSiteMockup from '../assets/pom-desktop-mockup.png';
+import gameGuruMockup from '../assets/game-guru-mockup.png';
 
 const projects = [
   {
@@ -15,7 +16,7 @@ const projects = [
   {
     title: 'Game Guru',
     description: 'Collaborated with Daniela Todorova to make an IOS application that uses AI to explain, setup, and manage collections of rule books for tabletop games.',
-    image: '/project2.jpg',
+    image: gameGuruMockup,
     technologies: ['SwiftUI', 'Firebase', 'OpenAI'],
     demo: 'https://project2-demo.com',
     category: 'Frontend',
@@ -93,11 +94,11 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative h-70">
+                <div className="relative h-50 sm:h-56 md:h-64 bg-gray-50 dark:bg-gray-700 flex items-center justify-center">
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full w-auto h-auto object-contain p-2 rounded-xl"
                   />
                 </div>
                 
