@@ -171,9 +171,9 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-8 rounded-xl shadow-lg"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 text-left">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
                   Name
                 </label>
                 <input
@@ -188,7 +188,7 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
                   Email
                 </label>
                 <input
@@ -203,7 +203,7 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
                   Message
                 </label>
                 <textarea
