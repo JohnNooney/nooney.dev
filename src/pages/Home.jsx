@@ -18,14 +18,13 @@ export default function Home() {
           animate={fadeIn.animate}
           transition={fadeIn.transition}
         >
-          <div className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg rounded-xl shadow-lg p-16 mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 text-gray-900 dark:text-white">
-              {' '}
+          <div className="p-16 mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 text-gray-900 dark:text-white min-h-[3em] flex items-center justify-center">
               <TypeAnimation
                 sequence={["Hi, I'm John Nooney", 1000]}
                 wrapper="span"
                 speed={20}
-                className="text-blue-600 dark:text-blue-400"
+                className="text-blue-600 dark:text-blue-400 block"
                 repeat={0}
               />
             </h1>
@@ -70,7 +69,6 @@ export default function Home() {
             ].map((skill, index) => (
               <motion.div
                 key={skill.title}
-                className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
