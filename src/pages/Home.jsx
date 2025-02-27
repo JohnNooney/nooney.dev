@@ -18,7 +18,7 @@ export default function Home() {
           animate={fadeIn.animate}
           transition={fadeIn.transition}
         >
-          <div className="p-15 mb-15">
+          <div className="p-10 mb-15">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 text-gray-900 dark:text-white min-h-[3em] flex items-center justify-center">
               <TypeAnimation
                 sequence={["Hi, I'm John Nooney", 1000]}
