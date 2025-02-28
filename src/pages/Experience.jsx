@@ -1,6 +1,53 @@
 import { motion } from 'framer-motion';
 import Link from '../components/Link';
 
+// Helper function to calculate duration between dates
+const calculateDuration = (startDate, endDate) => {
+  // Parse dates with month names
+  const parseDate = (dateStr) => {
+    if (dateStr === 'Present') return new Date();
+    
+    const months = {
+      'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+      'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
+    };
+    
+    const [monthStr, yearStr] = dateStr.split(' ');
+    const month = months[monthStr];
+    const year = parseInt(yearStr);
+    
+    return new Date(year, month);
+  };
+  
+  const start = parseDate(startDate);
+  const end = parseDate(endDate);
+  
+  // Calculate difference in years and months
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+  
+  // Adjust if months is negative
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  // Format the duration string
+  let duration = '';
+  if (years > 0) {
+    duration += `${years} year${years !== 1 ? 's' : ''}`;
+  }
+  if (months > 0) {
+    duration += duration ? ' ' : '';
+    duration += `${months} month${months !== 1 ? 's' : ''}`;
+  }
+  if (!duration) {
+    duration = 'Less than a month';
+  }
+  
+  return duration;
+};
+
 const experiences = [
   {
     title: 'Software Engineer II',
@@ -8,14 +55,13 @@ const experiences = [
     location: 'Scotland',
     period: {
       start: 'Oct 2024',
-      end: 'Present',
-      duration: '4 months'
+      end: 'Present'
     },
-    description: 'Worked with a release Support team to bolster the release process to production for 5 teams',
+    description: 'Serve as a key member of the Release Support team, enabling development teams to focus on feature work while ensuring smooth releases, deployments, and production issue resolution.',
     achievements: [
-      'Trained new team members on release management best practices',
-      'Improved release predictability by 77% through multi-stage deployment process',
-      'Defined detailed processes for each release stage'
+      'Reduced critical post-deployment manual steps by 60% through enhanced Helm charts and Terraform configurations',
+      'Decreased mean time to resolution for customer-reported issues by implementing a structured triage workflow and comprehensive logging strategy',
+      'Streamlined cross-team release coordination by developing a centralized documentation system that improved visibility and accountability'
     ],
     technologies: [
       'Helm',
@@ -23,13 +69,16 @@ const experiences = [
       'Terraform',
       'Google Cloud Platform (GCP)',
       'Docker', 
-      'Shell Scripts'
+      'Shell Scripts',
+      'Jenkins',
+      'Log Analysis Tools'
     ],
     keyResponsibilities: [
-      'Improved deployment processes',
-      'Trained new team members',
-      'Coordinating release processes',
-      'Customer issue resolution'
+      'Orchestrating multi-team release bundles from testing through production deployment',
+      'Triaging customer-reported issues and creating detailed bug reports with log analysis',
+      'Automating infrastructure provisioning to eliminate manual configuration steps',
+      'Providing technical guidance to development teams on deployment requirements',
+      'Managing incident response and coordinating resolution efforts across teams'
     ]
   },
   {
@@ -38,8 +87,7 @@ const experiences = [
     location: 'Scotland',
     period: {
       start: 'Aug 2023',
-      end: 'Oct 2024',
-      duration: '1 year 1 months'
+      end: 'Oct 2024'
     },
     description: 'Assisted in the creation of a release support team, streamlining collaboration between development and production for a new ITM software solution.',
     achievements: [
@@ -68,8 +116,7 @@ const experiences = [
     location: 'Scotland',
     period: {
       start: 'Sep 2021',
-      end: 'Aug 2023',
-      duration: '2 years'
+      end: 'Aug 2023'
     },
     description: 'Transformed a monolithic ATM application into a microservices architecture while championing software development best practices.',
     achievements: [
@@ -100,8 +147,7 @@ const experiences = [
     location: 'Scotland',
     period: {
       start: 'Jun 2021',
-      end: 'Sep 2021',
-      duration: '4 months'
+      end: 'Sep 2021'
     },
     description: 'Internship focused on cloud deployment and innovative knowledge management solutions.',
     achievements: [
@@ -156,7 +202,7 @@ export default function Experience() {
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400 mt-1 text-left">
                     {experience.period.start} - {experience.period.end} 
-                    {' '}({experience.period.duration})
+                    {' '}({calculateDuration(experience.period.start, experience.period.end)})
                   </p>
                   
                   <p className="mt-4 text-gray-700 dark:text-gray-300 text-left mb-8">
