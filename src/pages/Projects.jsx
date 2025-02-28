@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from '../components/Link';
 import medicalSiteMockup from '../assets/pom-desktop-mockup.png';
 import gameGuruMockup from '../assets/game-guru-mockup.png';
 
-// Default placeholder for projects without images
+// Default placeholder for projects without images - tiny blurred placeholder
 const placeholderImage = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlIEF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=';
 
 // Helper function to get GitHub metadata image URL
@@ -16,6 +16,106 @@ const getGitHubMetadataImage = (githubUrl) => {
   const [, owner, repo] = match;
   // Return the GitHub repository's social preview image
   return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
+};
+
+// Custom hook for lazy loading images
+const useImageLoader = (imageUrl, placeholderUrl) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [src, setSrc] = useState(placeholderUrl);
+  
+  useEffect(() => {
+    if (!imageUrl) {
+      setLoading(false);
+      return;
+    }
+    
+    const img = new Image();
+    img.src = imageUrl;
+    
+    img.onload = () => {
+      setSrc(imageUrl);
+      setLoading(false);
+    };
+    
+    img.onerror = () => {
+      setError(true);
+      setLoading(false);
+    };
+    
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, [imageUrl, placeholderUrl]);
+  
+  return { src, loading, error };
+};
+
+// Intersection Observer hook for lazy loading
+const useIntersectionObserver = (options = {}) => {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    }, options);
+    
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+    
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref, options]);
+  
+  return [ref, isVisible];
+};
+
+// Optimized image component
+const OptimizedImage = ({ src, alt, className, sizes = "100vw" }) => {
+  const [ref, isVisible] = useIntersectionObserver({
+    rootMargin: '200px 0px', // Load images 200px before they come into view
+    threshold: 0.01
+  });
+  
+  const imageUrl = src || placeholderImage;
+  const { src: loadedSrc, loading, error } = useImageLoader(
+    isVisible ? imageUrl : null, 
+    placeholderImage
+  );
+  
+  return (
+    <div 
+      ref={ref} 
+      className={`relative flex items-center justify-center w-full h-full ${className}`}
+    >
+      <img 
+        src={loadedSrc}
+        alt={alt}
+        loading="lazy"
+        className={`
+          max-w-full max-h-full object-contain p-2 rounded-xl
+          transition-opacity duration-500
+          ${loading ? 'opacity-60 blur-sm' : 'opacity-100 blur-0'}
+        `}
+        onError={(e) => {
+          e.target.onerror = null; // Prevent infinite loop
+          e.target.src = placeholderImage;
+        }}
+      />
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+    </div>
+  );
 };
 
 const projects = [
@@ -109,15 +209,10 @@ export default function Projects() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="relative h-50 sm:h-56 md:h-64 bg-gray-50 dark:bg-gray-700 flex items-center justify-center">
-                  <img 
-                    src={project.image || (project.github && getGitHubMetadataImage(project.github)) || placeholderImage} 
-                    alt={project.title} 
-                    className="max-w-full max-h-full object-contain p-2 rounded-xl"
-                    onError={(e) => {
-                      e.target.onerror = null; // Prevent infinite loop
-                      e.target.src = placeholderImage;
-                      e.target.className = 'max-w-full max-h-full w-auto h-auto object-contain p-2 rounded-xl';
-                    }}
+                  <OptimizedImage
+                    src={project.image || (project.github && getGitHubMetadataImage(project.github))}
+                    alt={project.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 
