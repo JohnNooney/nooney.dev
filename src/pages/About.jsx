@@ -105,10 +105,12 @@ export default function About() {
                   Software Engineer
                 </h2>
                 <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                  A versatile Software Engineer with 4+ years of experience transforming complex enterprise 
-                  solutions. I specialize in cloud architecture, DevOps practices, and full-stack development,
-                  with a proven track record of increasing deployment efficiency by 200% and improving release 
-                  predictability by 77%.
+                  A passionate Software Engineer with a proven track record in transforming complex enterprise 
+                  solutions. I blend technical expertise in cloud architecture, DevOps practices, and full-stack 
+                  development with strong collaborative skills. My approach combines innovative problem-solving 
+                  with a commitment to clean, maintainable code. Whether working on scalable applications, 
+                  optimizing deployment pipelines, or creating intuitive user experiences, I deliver solutions 
+                  that drive business value while adapting quickly to new technologies and environments.
                 </p>
                 <motion.div 
                   variants={stagger}
