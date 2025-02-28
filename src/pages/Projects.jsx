@@ -180,7 +180,7 @@ export default function Projects() {
           </h1>
 
           {/* Category Filter */}
-          <div className="flex justify-center mb-12 space-x-4">
+          <div className="flex flex-wrap justify-center mb-12 px-2 gap-3">
             {categories.map((category) => (
               <button
                 key={category}
