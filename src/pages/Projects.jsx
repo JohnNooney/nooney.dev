@@ -4,6 +4,20 @@ import Link from '../components/Link';
 import medicalSiteMockup from '../assets/pom-desktop-mockup.png';
 import gameGuruMockup from '../assets/game-guru-mockup.png';
 
+// Default placeholder for projects without images
+const placeholderImage = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlIEF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=';
+
+// Helper function to get GitHub metadata image URL
+const getGitHubMetadataImage = (githubUrl) => {
+  if (!githubUrl) return null;
+  // Extract owner and repo from GitHub URL
+  const match = githubUrl.match(/github\.com\/([^\/]+)\/([^\/]+)/);
+  if (!match) return null;
+  const [, owner, repo] = match;
+  // Return the GitHub repository's social preview image
+  return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
+};
+
 const projects = [
   {
     title: 'Medical Practice Site',
@@ -24,7 +38,7 @@ const projects = [
   {
     title: 'Meeting Booker',
     description: 'A WPF MVVM application that allows users to book meetings and view their schedule.',
-    image: '/project2.jpg',
+    image: '',
     technologies: ['WPF', '.NET', 'MVVM', 'MSSQL', 'Entity Framework'],
     github: 'https://github.com/JohnNooney/BookMeetings',
     category: 'Full Stack',
@@ -32,7 +46,7 @@ const projects = [
   {
     title: 'CSV Parser',
     description: 'A tool to parse CSVs containing customer data and add them to a database via a Spring API.',
-    image: '/project2.jpg',
+    image: '',
     technologies: ['Spring', 'Java', 'PostgreSQL'],
     github: 'https://github.com/JohnNooney/java-rest-app-demo',
     category: 'Backend',
@@ -96,9 +110,14 @@ export default function Projects() {
               >
                 <div className="relative h-50 sm:h-56 md:h-64 bg-gray-50 dark:bg-gray-700 flex items-center justify-center">
                   <img 
-                    src={project.image} 
+                    src={project.image || (project.github && getGitHubMetadataImage(project.github)) || placeholderImage} 
                     alt={project.title} 
-                    className="max-w-full max-h-full w-auto h-auto object-contain p-2 rounded-xl"
+                    className="max-w-full max-h-full object-contain p-2 rounded-xl"
+                    onError={(e) => {
+                      e.target.onerror = null; // Prevent infinite loop
+                      e.target.src = placeholderImage;
+                      e.target.className = 'max-w-full max-h-full w-auto h-auto object-contain p-2 rounded-xl';
+                    }}
                   />
                 </div>
                 
