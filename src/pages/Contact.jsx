@@ -265,12 +265,12 @@ export default function Contact() {
                   link="mailto:john@nooney.dev"
                   ariaLabel="Email John Nooney"
                 />
-                <ContactInfoItem
+                {/* <ContactInfoItem
                   icon={PhoneIcon}
                   content="+44 7123 456 789"
                   link="tel:+447123456789"
                   ariaLabel="Call John Nooney"
-                />
+                /> */}
               </div>
             </div>
 
