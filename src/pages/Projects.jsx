@@ -132,8 +132,15 @@ const projects = [
     description: 'Collaborated with Daniela Todorova to make an IOS application that uses AI to explain, setup, and manage collections of rule books for tabletop games.',
     image: gameGuruMockup,
     technologies: ['SwiftUI', 'Firebase', 'OpenAI'],
-    demo: 'https://project2-demo.com',
+    demo: 'wip',
     category: 'Frontend',
+  },  {
+    title: 'Face First',
+    description: 'Collaborated with Jesse Chan and Luke Dawe to build a vide-first dating application. Think Omegle combined with Tinder.',
+    image: '',
+    technologies: ['Flutter', 'Firestore', 'WebRTC'],
+    demo: 'wip',
+    category: 'Full Stack',
   },
   {
     title: 'Meeting Booker',
@@ -247,16 +254,25 @@ export default function Projects() {
                         View Code
                       </Link>
                     )}
-                    {project.demo && (
-                      <Link
-                        to={project.demo}
-                        external
-                        variant="primary"
-                        className="flex-1 text-center"
-                      >
-                        Live Demo
-                      </Link>
-                    )}
+                    {project.demo ? (
+                      project.demo === "wip" ? (
+                        <Link 
+                          variant="wip" 
+                          className="flex-1 text-center"
+                        >
+                          Work In Progress
+                        </Link>
+                      ) : (
+                        <Link
+                          to={project.demo}
+                          external
+                          variant="primary"
+                          className="flex-1 text-center"
+                        >
+                          Live Demo
+                        </Link>
+                      )
+                    ) : null}
                   </div>
                 </div>
               </motion.div>

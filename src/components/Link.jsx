@@ -8,6 +8,7 @@ const linkVariants = {
   outline: 'border-2 border-gray-600 dark:border-gray-400 text-gray-800 dark:text-white hover:bg-gray-600 dark:hover:bg-gray-500 hover:text-white',
   ghost: 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400',
   about: 'bg-white dark:bg-gray-800 w-full min-h-[200px] flex flex-col p-6 shadow-lg hover:shadow-xl text-gray-800 dark:text-white',
+  wip: 'bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-400 border-2 border-dashed border-gray-400 dark:border-gray-500 cursor-not-allowed opacity-70',
 };
 
 const Link = ({ 
@@ -25,6 +26,15 @@ const Link = ({
     ${linkVariants[variant]}
     ${className}
   `;
+
+  // For WIP links, render a div that looks like a link but isn't clickable
+  if (variant === 'wip') {
+    return (
+      <div className={baseClasses} {...props}>
+        {children}
+      </div>
+    );
+  }
 
   // For external links
   if (external) {
