@@ -47,34 +47,33 @@ const Link = ({
   return (
     <RouterLink
       to={to}
-      onClick={() => document.querySelector('main').scrollTo(0, 0)}
       {...props}
     >
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className={`
-        inline-block 
-        rounded-lg 
-        transition-all 
-        duration-300 
-          ${variant === 'about' ? 'w-full' : ''}
-      `}
-    >
-        <div
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         className={`
           inline-block 
-            px-4 py-2 
           rounded-lg 
           transition-all 
           duration-300 
-          ${linkVariants[variant]} 
-          ${className}
+            ${variant === 'about' ? 'w-full' : ''}
         `}
       >
+          <div
+          className={`
+            inline-block 
+              px-4 py-2 
+            rounded-lg 
+            transition-all 
+            duration-300 
+            ${linkVariants[variant]} 
+            ${className}
+          `}
+      >
         {children}
-        </div>
-    </motion.div>
+          </div>
+      </motion.div>    
     </RouterLink>
   );
 };

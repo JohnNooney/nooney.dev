@@ -9,10 +9,12 @@ import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen w-full flex flex-col bg-gray-50 dark:bg-gray-900">
         <Helmet>
           <title>John Nooney - Software Engineer</title>

@@ -64,7 +64,6 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link 
-              onClick={() => document.querySelector('main').scrollTo(0, 0)}
               to="/" 
               className="flex items-center group"
               aria-label="Home"
@@ -125,7 +124,6 @@ export default function Navbar() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                onClick={() => document.querySelector('main').scrollTo(0, 0)}
                 to={item.path}
                 role="menuitem"
                 aria-current={location.pathname === item.path ? 'page' : undefined}
@@ -211,10 +209,7 @@ export default function Navbar() {
                     to={item.path}
                     role="menuitem"
                     aria-current={location.pathname === item.path ? 'page' : undefined}
-                    onClick={() => {
-                      setIsOpen(false);
-                      document.querySelector('main').scrollTo(0, 0);
-                    }}
+                    onClick={() => setIsOpen(false)}
                     className={`
                       block px-3 py-2 rounded-lg text-base font-medium 
                       transition-all duration-300 relative group focus:outline-none
