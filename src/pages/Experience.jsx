@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import Link from '../components/Link';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // Helper function to calculate duration between dates
 const calculateDuration = (startDate, endDate) => {
@@ -171,103 +173,109 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="min-h-screen bg-sky-50 dark:bg-gray-900 py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl font-bold text-center mb-12 text-blue-800 dark:text-blue-400">
-            Professional Experience
-          </h1>
+    <>
+      <Helmet>
+        <title>Professional Experience | John Nooney Portfolio</title>
+        <meta name="description" content="Review John Nooney's professional software engineering experience, detailing past roles, responsibilities, and key achievements in the tech industry." />
+      </Helmet>
+      <section className="min-h-screen bg-sky-50 dark:bg-gray-900 py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl font-bold text-center mb-12 text-blue-800 dark:text-blue-400">
+              Professional Experience
+            </h1>
 
-          <div className="max-w-4xl mx-auto">
-            {experiences.map((experience, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="mb-12 relative pl-8 border-l-2 border-primary last:mb-0"
-              >
-                <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-0" />
-                
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6">
-                  <h3 className="text-2xl font-bold text-blue-500 dark:text-blue-300 text-left">
-                    {experience.title}
-                  </h3>
-                  <h4 className="text-lg font-semibold text-primary mt-1 text-left">
-                    {experience.company} - {experience.location}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-400 mt-1 text-left">
-                    {experience.period.start} - {experience.period.end} 
-                    {' '}({calculateDuration(experience.period.start, experience.period.end)})
-                  </p>
+            <div className="max-w-4xl mx-auto">
+              {experiences.map((experience, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="mb-12 relative pl-8 border-l-2 border-primary last:mb-0"
+                >
+                  <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-0" />
                   
-                  <p className="mt-4 text-gray-700 dark:text-gray-300 text-left mb-8">
-                    {experience.description}
-                  </p>
+                  <div className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 className="text-2xl font-bold text-blue-500 dark:text-blue-300 text-left">
+                      {experience.title}
+                    </h3>
+                    <h4 className="text-lg font-semibold text-primary mt-1 text-left">
+                      {experience.company} - {experience.location}
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 mt-1 text-left">
+                      {experience.period.start} - {experience.period.end} 
+                      {' '}({calculateDuration(experience.period.start, experience.period.end)})
+                    </p>
+                    
+                    <p className="mt-4 text-gray-700 dark:text-gray-300 text-left mb-8">
+                      {experience.description}
+                    </p>
 
-                  {experience.achievements && (
-                    <div className="mt-4 text-left">
-                      <h5 className="font-semibold mb-2 text-gray-900 dark:text-white text-left">
-                        Key Achievements:
-                      </h5>
-                      <ul className="list-disc list-outside space-y-2 text-gray-700 dark:text-gray-300 pl-5 text-left">
-                        {experience.achievements.map((achievement, i) => (
-                          <li key={i} className="pl-2">{achievement}</li>
-                        ))}
-                      </ul>
+                    {experience.achievements && (
+                      <div className="mt-4 text-left">
+                        <h5 className="font-semibold mb-2 text-gray-900 dark:text-white text-left">
+                          Key Achievements:
+                        </h5>
+                        <ul className="list-disc list-outside space-y-2 text-gray-700 dark:text-gray-300 pl-5 text-left">
+                          {experience.achievements.map((achievement, i) => (
+                            <li key={i} className="pl-2">{achievement}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {experience.keyResponsibilities && (
+                      <div className="mt-4 text-left">
+                        <h5 className="font-semibold mb-2 text-gray-900 dark:text-white text-left">
+                          Key Responsibilities:
+                        </h5>
+                        <ul className="list-disc list-outside space-y-2 text-gray-700 dark:text-gray-300 pl-5 text-left">
+                          {experience.keyResponsibilities.map((responsibility, i) => (
+                            <li key={i} className="pl-2">{responsibility}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {experience.technologies.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-                  )}
-
-                  {experience.keyResponsibilities && (
-                    <div className="mt-4 text-left">
-                      <h5 className="font-semibold mb-2 text-gray-900 dark:text-white text-left">
-                        Key Responsibilities:
-                      </h5>
-                      <ul className="list-disc list-outside space-y-2 text-gray-700 dark:text-gray-300 pl-5 text-left">
-                        {experience.keyResponsibilities.map((responsibility, i) => (
-                          <li key={i} className="pl-2">{responsibility}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {experience.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
 
-          <div className="flex justify-center mt-12 space-x-4">
-            <Link 
-              to="/projects" 
-              variant="primary" 
-              className="px-6 py-3"
-            >
-              Explore Projects
-            </Link>
-            <Link 
-              to="/skills" 
-              variant="secondary" 
-              className="px-6 py-3"
-            >
-              View My Skills
-            </Link>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+            <div className="flex justify-center mt-12 space-x-4">
+              <Link 
+                to="/projects" 
+                variant="primary" 
+                className="px-6 py-3"
+              >
+                Explore Projects
+              </Link>
+              <Link 
+                to="/skills" 
+                variant="secondary" 
+                className="px-6 py-3"
+              >
+                View My Skills
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }

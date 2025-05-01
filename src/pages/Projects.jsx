@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from '../components/Link';
+import Helmet from 'react-helmet';
 import medicalSiteMockup from '../assets/pom-desktop-mockup.png';
 import gameGuruMockup from '../assets/game-guru-mockup.png';
 
@@ -175,129 +176,135 @@ export default function Projects() {
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <section className="min-h-screen bg-sky-50 dark:bg-gray-900 py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl font-bold text-center mb-12 text-blue-800 dark:text-blue-400">
-            My Projects
-          </h1>
+    <>
+      <Helmet>
+        <title>Projects Showcase | John Nooney Portfolio</title>
+        <meta name="description" content="Explore a selection of software development projects by John Nooney, showcasing practical application of technical skills and problem-solving abilities." />
+      </Helmet>
+      <section className="min-h-screen bg-sky-50 dark:bg-gray-900 py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl font-bold text-center mb-12 text-blue-800 dark:text-blue-400">
+              My Projects
+            </h1>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center mb-12 px-2 gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`
-                  px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
-                  ${selectedCategory === category 
-                    ? 'bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 dark:hover:bg-blue-600' 
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
-                  }
-                `}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center mb-12 px-2 gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`
+                    px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
+                    ${selectedCategory === category 
+                      ? 'bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 dark:hover:bg-blue-600' 
+                      : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                    }
+                  `}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <motion.div 
-                key={project.title}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="relative h-50 sm:h-56 md:h-64 bg-gray-50 dark:bg-gray-700 flex items-center justify-center">
-                  <OptimizedImage
-                    src={project.image || (project.github && getGitHubMetadataImage(project.github))}
-                    alt={project.title}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                
-                <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-bold text-blue-500 dark:text-blue-300 mb-4">
-                    {project.title}
-                  </h3>
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((project, index) => (
+                <motion.div 
+                  key={project.title}
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-50 sm:h-56 md:h-64 bg-gray-50 dark:bg-gray-700 flex items-center justify-center">
+                    <OptimizedImage
+                      src={project.image || (project.github && getGitHubMetadataImage(project.github))}
+                      alt={project.title}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
                   
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
-                    {project.description}
-                  </p>
+                  <div className="p-6 flex-grow flex flex-col">
+                    <h3 className="text-2xl font-bold text-blue-500 dark:text-blue-300 mb-4">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
+                      {project.description}
+                    </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex justify-between gap-4">
-                    {project.github && (
-                      <Link
-                        to={project.github}
-                        external
-                        variant="outline"
-                        className="flex-1 text-center"
-                      >
-                        View Code
-                      </Link>
-                    )}
-                    {project.demo ? (
-                      project.demo === "wip" ? (
-                        <Link 
-                          variant="wip" 
-                          className="flex-1 text-center"
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300"
                         >
-                          Work In Progress
-                        </Link>
-                      ) : (
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex justify-between gap-4">
+                      {project.github && (
                         <Link
-                          to={project.demo}
+                          to={project.github}
                           external
-                          variant="primary"
+                          variant="outline"
                           className="flex-1 text-center"
                         >
-                          Live Demo
+                          View Code
                         </Link>
-                      )
-                    ) : null}
+                      )}
+                      {project.demo ? (
+                        project.demo === "wip" ? (
+                          <Link 
+                            variant="wip" 
+                            className="flex-1 text-center"
+                          >
+                            Work In Progress
+                          </Link>
+                        ) : (
+                          <Link
+                            to={project.demo}
+                            external
+                            variant="primary"
+                            className="flex-1 text-center"
+                          >
+                            Live Demo
+                          </Link>
+                        )
+                      ) : null}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
 
-          {/* Navigation Links */}
-          <div className="flex justify-center mt-12 space-x-4">
-            <Link 
-              to="/contact" 
-              variant="primary" 
-              className="px-6 py-3"
-            >
-              Contact Me
-            </Link>
-            <Link 
-              to="/experience" 
-              variant="secondary" 
-              className="px-6 py-3"
-            >
-              View Experience
-            </Link>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+            {/* Navigation Links */}
+            <div className="flex justify-center mt-12 space-x-4">
+              <Link 
+                to="/contact" 
+                variant="primary" 
+                className="px-6 py-3"
+              >
+                Contact Me
+              </Link>
+              <Link 
+                to="/experience" 
+                variant="secondary" 
+                className="px-6 py-3"
+              >
+                View Experience
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }

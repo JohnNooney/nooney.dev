@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { Helmet } from 'react-helmet';
 import { 
   EnvelopeIcon, 
   PhoneIcon 
@@ -147,142 +148,148 @@ export default function Contact() {
   ), []);
 
   return (
-    <section className="min-h-screen bg-gray-100 dark:bg-gray-900 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl font-bold mb-6 text-blue-800 dark:text-blue-400">
-            Get in Touch
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a question or want to work together? I'd love to hear from you.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Contact Form */}
+    <>
+      <Helmet>
+        <title>Contact John Nooney | Software Engineer</title>
+        <meta name="description" content="Get in touch with John Nooney for collaborations, inquiries, or professional opportunities via email or LinkedIn." />
+      </Helmet>
+      <section className="min-h-screen bg-gray-100 dark:bg-gray-900 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-8 rounded-xl shadow-lg"
+            className="text-center mb-16"
           >
-            <form onSubmit={handleSubmit} className="space-y-6 text-left">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-700/60 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-700/60 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-700/60 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  required
-                />
-              </div>
-
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full"
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </Button>
-
-              {submitStatus === 'success' && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-green-600 dark:text-green-400 text-sm mt-2"
-                >
-                  Message sent successfully!
-                </motion.p>
-              )}
-
-              {submitStatus === 'error' && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-red-600 dark:text-red-400 text-sm mt-2"
-                >
-                  There was an error sending your message. Please try again.
-                </motion.p>
-              )}
-            </form>
+            <h1 className="text-4xl font-bold mb-6 text-blue-800 dark:text-blue-400">
+              Get in Touch
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Have a question or want to work together? I'd love to hear from you.
+            </p>
           </motion.div>
 
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-8 rounded-xl shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Contact Information
-              </h2>
-              <div className="space-y-4">
-                <ContactInfoItem
-                  icon={EnvelopeIcon}
-                  content="john@nooney.dev"
-                  link="mailto:john@nooney.dev"
-                  ariaLabel="Email John Nooney"
-                />
-                {/* <ContactInfoItem
-                  icon={PhoneIcon}
-                  content="+44 7123 456 789"
-                  link="tel:+447123456789"
-                  ariaLabel="Call John Nooney"
-                /> */}
-              </div>
-            </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-8 rounded-xl shadow-lg"
+            >
+              <form onSubmit={handleSubmit} className="space-y-6 text-left">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-700/60 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-700/60 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-700/60 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    required
+                  />
+                </div>
 
-            <div className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-8 rounded-xl shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Connect
-              </h2>
-              <SocialLinks />
-            </div>
-          </motion.div>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </Button>
+
+                {submitStatus === 'success' && (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-green-600 dark:text-green-400 text-sm mt-2"
+                  >
+                    Message sent successfully!
+                  </motion.p>
+                )}
+
+                {submitStatus === 'error' && (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-red-600 dark:text-red-400 text-sm mt-2"
+                  >
+                    There was an error sending your message. Please try again.
+                  </motion.p>
+                )}
+              </form>
+            </motion.div>
+
+            {/* Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <div className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-8 rounded-xl shadow-lg">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Contact Information
+                </h2>
+                <div className="space-y-4">
+                  <ContactInfoItem
+                    icon={EnvelopeIcon}
+                    content="john@nooney.dev"
+                    link="mailto:john@nooney.dev"
+                    ariaLabel="Email John Nooney"
+                  />
+                  {/* <ContactInfoItem
+                    icon={PhoneIcon}
+                    content="+44 7123 456 789"
+                    link="tel:+447123456789"
+                    ariaLabel="Call John Nooney"
+                  /> */}
+                </div>
+              </div>
+
+              <div className="bg-white/95 dark:bg-gray-800/80 backdrop-blur-lg p-8 rounded-xl shadow-lg">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Connect
+                </h2>
+                <SocialLinks />
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,11 +15,6 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="min-h-screen w-full flex flex-col bg-gray-50 dark:bg-gray-900">
-        <Helmet>
-          <title>John Nooney - Software Engineer</title>
-          <meta name="description" content="Professional portfolio of John Nooney, showcasing software engineering skills, experience, and projects." />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </Helmet>
         
         <Navbar />
         
