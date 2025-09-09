@@ -136,8 +136,15 @@ const projects = [
     demo: 'wip',
     category: 'Frontend',
   },  {
+    title: 'ObservAR',
+    description: 'Currently collaborating with a team to build an tourism AR application where users can explore the world to find historical figures and learn about them.',
+    image: '',
+    technologies: ['Unity', 'ARCore', 'Firestore', 'OpenAI'],
+    demo: 'wip',
+    category: 'Full Stack',
+  }, {
     title: 'Face First',
-    description: 'Collaborated with Jesse Chan and Luke Dawe to build a vide-first dating application. Think Omegle combined with Tinder.',
+    description: 'Currently collaborating with a team to build a video-first dating application. Think Omegle combined with Tinder.',
     image: '',
     technologies: ['Flutter', 'Firestore', 'WebRTC'],
     demo: 'wip',
