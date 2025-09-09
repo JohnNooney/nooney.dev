@@ -142,8 +142,7 @@ Create a professional portfolio website to showcase software engineering skills,
   - Validation and submission handling
 
 - Direct Contact Information
-  - Email: johnnoon74@gmail.com
-  - Phone: 07305967405
+  - Email: john@nooney.dev
   - GitHub: github.com/JohnNooney
 
 - Social Media Links
