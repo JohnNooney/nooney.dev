@@ -126,15 +126,15 @@ const projects = [
     image: medicalSiteMockup,
     technologies: ['React', 'Node.js', 'Firestore', 'Cloud Functions'],
     demo: 'https://docmarenco.com',
-    category: 'Full Stack',
+    category: 'Frontend',
   },
   {
     title: 'Game Guru',
-    description: 'Collaborated with Daniela Todorova to make an IOS application that uses AI to explain, setup, and manage collections of rule books for tabletop games.',
+    description: 'Currently collaborating with Daniela Todorova to make an IOS application that uses AI to explain, setup, and manage collections of rule books for tabletop games.',
     image: gameGuruMockup,
     technologies: ['SwiftUI', 'Firebase', 'OpenAI'],
     demo: 'wip',
-    category: 'Frontend',
+    category: 'Full Stack',
   },  {
     title: 'ObservAR',
     description: 'Currently collaborating with a team to build an tourism AR application where users can explore the world to find historical figures and learn about them.',
