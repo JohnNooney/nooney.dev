@@ -147,7 +147,7 @@ export default function Skills() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: categoryIndex * 0.1 }}
-                  className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
+                  className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl"
                 >
                   <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white text-center">
                     {category.title}
@@ -159,7 +159,7 @@ export default function Skills() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: skillIndex * 0.1 }}
-                        className="flex flex-col items-center justify-center p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:shadow-md transition-all duration-300"
+                        className="flex flex-col items-center justify-center p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:shadow-md"
                         title={skill.name}
                       >
                         <img

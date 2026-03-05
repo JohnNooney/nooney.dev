@@ -187,7 +187,7 @@ export default function About() {
                       key={focus.title}
                       variants={item}
                       whileHover={{ scale: 1.02 }}
-                      className="bg-gray-50/80 dark:bg-gray-700/60 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                      className="bg-gray-50/80 dark:bg-gray-700/60 p-6 rounded-xl shadow-sm hover:shadow-md "
                     >
                       <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">{focus.title}</h3>
                       <p className="text-gray-700 dark:text-gray-300 text-lg">{focus.description}</p>
@@ -239,7 +239,7 @@ export default function About() {
                           key={index}
                           variants={item}
                           whileHover={{ scale: 1.05 }}
-                          className="bg-gray-50/80 dark:bg-gray-700/60 p-4 rounded-xl flex items-center justify-center text-center text-gray-700 dark:text-gray-300 shadow-sm hover:shadow-md transition-all duration-200"
+                          className="bg-gray-50/80 dark:bg-gray-700/60 p-4 rounded-xl flex items-center justify-center text-center text-gray-700 dark:text-gray-300 shadow-sm hover:shadow-md"
                         >
                           {interest}
                         </motion.div>

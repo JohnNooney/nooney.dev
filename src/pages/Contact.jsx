@@ -69,10 +69,9 @@ export default function Contact() {
 
   const ContactInfoItem = useCallback(({ icon: Icon, content, link, ariaLabel }) => (
     <motion.div 
-      className="bg-gray-50/80 dark:bg-gray-700/60 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 group"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      className="bg-gray-50/80 dark:bg-gray-700/60 p-6 rounded-xl shadow-sm hover:shadow-md"
+      whileHover={{ scale: 1.02, y: -4 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
       <div className="flex items-center space-x-4">
         <div className="bg-white/90 dark:bg-gray-800/90 p-3 rounded-full shadow-sm">
