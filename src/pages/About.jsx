@@ -111,12 +111,11 @@ export default function About() {
                     Software Engineer
                   </h2>
                   <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                    A passionate Software Engineer with a proven track record in transforming complex enterprise 
-                    solutions. I blend technical expertise in cloud architecture, DevOps practices, and full-stack 
-                    development with strong collaborative skills. My approach combines innovative problem-solving 
-                    with a commitment to clean, maintainable code. Whether working on scalable applications, 
-                    optimizing deployment pipelines, or creating intuitive user experiences, I deliver solutions 
-                    that drive business value while adapting quickly to new technologies and environments.
+                    Full Stack Engineer & DevOps Specialist with 4+ years of enterprise-grade 
+                    experience building and scaling resilient applications. I bridge the gap between 
+                    development and operations, leveraging a deep background in full-stack development to optimize CI/CD pipelines, 
+                    containerization, and cloud infrastructure. Having spent the last 2 years focused on DevOps transformation, 
+                    I specialize in automating complex workflows to accelerate delivery without sacrificing stability.
                   </p>
                   <motion.div 
                     variants={stagger}

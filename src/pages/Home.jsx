@@ -35,8 +35,8 @@ const Home = () => {
                   repeat={0}
                 />
               </h1>
-              <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-16 max-w-2xl mx-auto leading-relaxed">
-                Software Engineer passionate about building innovative solutions
+              <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed">
+                <span className="font-semibold text-gray-900 dark:text-white">Full-Stack Software Engineer</span> delivering end-to-end solutions, from initial architecture and design to production deployment and cloud infrastructure
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -62,16 +62,16 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: 'Frontend Development',
-                  description: 'Building responsive and intuitive user interfaces with modern technologies'
+                  title: 'Architecture & Design',
+                  description: 'Crafting scalable system architectures with clean, maintainable code patterns and strategic technical decisions'
                 },
                 {
-                  title: 'Backend Development',
-                  description: 'Creating robust and scalable server-side applications'
+                  title: 'Full-Stack Development',
+                  description: 'Building complete solutions from intuitive frontends to robust backend APIs with seamless integration'
                 },
                 {
-                  title: 'Cloud Solutions',
-                  description: 'Deploying and managing applications in cloud environments'
+                  title: 'Cloud & DevOps',
+                  description: 'Deploying production-ready applications with CI/CD pipelines, monitoring, and infrastructure as code'
                 }
               ].map((skill, index) => (
                 <motion.div
