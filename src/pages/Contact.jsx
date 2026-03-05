@@ -122,7 +122,7 @@ export default function Contact() {
             </svg>
           ),
           name: 'LinkedIn',
-          link: 'https://www.linkedin.com/in/john-nooney/',
+          link: 'https://www.linkedin.com/in/johnnooney/',
           label: 'LinkedIn Profile'
         }
       ].map((social) => (
