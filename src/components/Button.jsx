@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const buttonVariants = {
-  primary: 'bg-gradient-to-r from-blue-400 to-blue-400 hover:from-blue-400 hover:to-blue-800 text-white',
+  primary: 'bg-blue-400 hover:bg-blue-800 text-white',
   secondary: 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600',
   outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
   wip: 'bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-400 border-2 border-dashed border-gray-400 dark:border-gray-500',
