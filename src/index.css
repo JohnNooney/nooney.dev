@@ -34,6 +34,10 @@ body {
 @media (pointer: fine) {
   body { cursor: none; }
 }
+@media (pointer: coarse), (hover: none) {
+  body { cursor: auto; }
+  #cursor, #cursor-ring { display: none; }
+}
 #cursor {
   position: fixed;
   width: 8px; height: 8px;
