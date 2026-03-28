@@ -118,33 +118,6 @@ export default function Projects() {
                 </div>
               )}
             </div>
-            {p.featured && (
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{
-                  background: 'var(--bg3)',
-                  border: '1px solid var(--border)',
-                  padding: 28,
-                }}>
-                  <div style={{ fontSize: 9, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: 16 }}>
-                    // Tech Stack
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
-                    {['React', 'Node.js', 'Firestore', 'GCP'].map((node) => (
-                      <div key={node} style={{
-                        border: '1px solid rgba(0,212,255,0.4)',
-                        padding: 8,
-                        textAlign: 'center',
-                        fontSize: 9,
-                        color: 'var(--accent)',
-                        letterSpacing: '0.08em',
-                      }}>
-                        {node}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         ))}
       </div>

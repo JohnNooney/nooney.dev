@@ -579,6 +579,20 @@ section.site-section {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
+
+/* Tech stack diagram */
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .project-type {
   font-size: 9px;
   letter-spacing: 0.25em;
