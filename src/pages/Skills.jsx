@@ -1,202 +1,98 @@
-import { motion } from 'framer-motion';
-import Link from '../components/Link';
-import { Helmet } from 'react-helmet';
-
-const skillCategories = [
+const skillCards = [
   {
-    title: 'Languages',
-    skills: [
-      { 
-        name: 'C#', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg'
-      },
-      { 
-        name: 'Java', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
-      },
-      { 
-        name: 'Python', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
-      },
-      { 
-        name: 'TypeScript', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
-      },
-      { 
-        name: 'Swift', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg'
-      },
-      {
-        name: 'C++',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg'
-      }
+    icon: '⬡',
+    title: 'Cloud & DevOps',
+    desc: 'Expertise in GCP, Kubernetes, and Terraform, with a focus on automated deployment pipelines and cloud-native solutions.',
+    pills: [
+      { label: 'Kubernetes', cls: 'accent' },
+      { label: 'Helm', cls: 'accent' },
+      { label: 'GCP', cls: '' },
+      { label: 'Terraform', cls: 'accent' },
+      { label: 'Docker', cls: '' },
     ],
   },
   {
-    title: 'Frontend',
-    skills: [
-      { 
-        name: 'React', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
-      },
-      { 
-        name: 'HTML5', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
-      },
-      { 
-        name: 'CSS3', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
-      },
-      { 
-        name: 'Flutter', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg'
-      },
-      { 
-        name: 'SwiftUI', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg'
-      },
-      {
-        name: 'Angular',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg'
-      }
+    icon: '◈',
+    title: 'CI/CD & Automation',
+    desc: 'End-to-end pipeline design from code commit to production. Improved release predictability by 77% and deployment frequency by 200%.',
+    pills: [
+      { label: 'Jenkins', cls: 'orange' },
+      { label: 'GitHub Actions', cls: '' },
+      { label: 'Shell Scripts', cls: '' },
+      { label: 'Helm Charts', cls: '' },
     ],
   },
   {
-    title: 'Backend',
-    skills: [
-      { 
-        name: 'Node.js', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
-      },
-      { 
-        name: 'Spring', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg'
-      },
-      { 
-        name: 'Express', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
-      },
-      { 
-        name: 'PostgreSQL', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
-      },
-      { 
-        name: '.NET', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg'
-      },
-      {
-        name: 'Django',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg'
-      }
+    icon: '☁',
+    title: 'Architecture',
+    desc: 'Specialized in transforming monolithic applications into scalable microservices using event-driven patterns.',
+    pills: [
+      { label: 'Microservices', cls: '' },
+      { label: 'Kafka', cls: 'green' },
+      { label: 'Spring', cls: '' },
+      { label: 'Event-Driven', cls: '' },
     ],
   },
   {
-    title: 'Tools & Technologies',
-    skills: [
-      { 
-        name: 'Git', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
-      },
-      { 
-        name: 'Docker', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
-      },
-      { 
-        name: 'Google Cloud', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg'
-      },
-      { 
-        name: 'Jenkins', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg'
-      },
-      { 
-        name: 'Kubernetes', 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'
-      },
-      {
-        name: 'Terraform',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg'
-      }
+    icon: '⌗',
+    title: 'Backend Development',
+    desc: 'Strong foundation in Java Spring, .NET, and Node.js, building robust and scalable APIs and data pipelines.',
+    pills: [
+      { label: 'Java', cls: 'accent' },
+      { label: 'C#', cls: 'accent' },
+      { label: '.NET', cls: '' },
+      { label: 'Node.js', cls: '' },
+      { label: 'PostgreSQL', cls: '' },
+    ],
+  },
+  {
+    icon: '◎',
+    title: 'Frontend Development',
+    desc: 'Experience with modern frameworks like React, Angular, and Flutter, creating responsive and interactive user interfaces.',
+    pills: [
+      { label: 'React', cls: 'green' },
+      { label: 'Angular', cls: 'green' },
+      { label: 'Flutter', cls: '' },
+      { label: 'SwiftUI', cls: '' },
+      { label: 'TypeScript', cls: '' },
+    ],
+  },
+  {
+    icon: '⬟',
+    title: 'Languages & Tools',
+    desc: 'Polyglot engineer comfortable across the full stack, from systems languages to scripting and infrastructure as code.',
+    pills: [
+      { label: 'Python', cls: 'orange' },
+      { label: 'C++', cls: '' },
+      { label: 'Swift', cls: '' },
+      { label: 'Git', cls: '' },
+      { label: 'Django', cls: '' },
     ],
   },
 ];
 
 export default function Skills() {
   return (
-    <>
-      <Helmet>
-        <title>Skills & Expertise | Portfolio</title>
-        <meta name="description" content="Explore the technical skills and expertise of the portfolio owner, including programming languages, frameworks, databases, and cloud technologies." />
-      </Helmet>
-      <section className="min-h-screen bg-sky-50 dark:bg-gray-900 py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-6xl mx-auto"
-          >
-            <h1 className="text-4xl font-bold text-center mb-12 text-blue-800 dark:text-blue-400">
-              Skills & Expertise
-            </h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {skillCategories.map((category, categoryIndex) => (
-                <motion.div
-                  key={category.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: categoryIndex * 0.1 }}
-                  className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl"
-                >
-                  <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white text-center">
-                    {category.title}
-                  </h2>
-                  <div className="grid grid-cols-3 gap-6">
-                    {category.skills.map((skill, skillIndex) => (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: skillIndex * 0.1 }}
-                        className="flex flex-col items-center justify-center p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:shadow-md"
-                        title={skill.name}
-                      >
-                        <img
-                          src={skill.icon}
-                          alt={`${skill.name} icon`}
-                          className="w-12 h-12 mb-2 transition-transform duration-300 hover:scale-110"
-                        />
-                        <span className="text-sm text-center text-gray-800 dark:text-gray-200">
-                          {skill.name}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
+    <section id="skills" className="site-section">
+      <div className="section-num">01</div>
+      <div className="section-label">01 — Technical Expertise</div>
+      <h2 className="section-heading">What I Build &amp; Operate</h2>
+      <div className="skills-grid">
+        {skillCards.map((card) => (
+          <div key={card.title} className="skill-card reveal">
+            <span className="skill-card-icon">{card.icon}</span>
+            <div className="skill-card-title">{card.title}</div>
+            <p className="skill-card-desc">{card.desc}</p>
+            <div className="skill-pills">
+              {card.pills.map((p) => (
+                <span key={p.label} className={`pill${p.cls ? ' ' + p.cls : ''}`}>
+                  {p.label}
+                </span>
               ))}
             </div>
-
-            {/* Navigation Links */}
-            <div className="flex justify-center mt-12 space-x-4">
-              <Link 
-                to="/experience" 
-                variant="primary" 
-                className="px-6 py-3"
-              >
-                View Experience
-              </Link>
-              <Link 
-                to="/projects" 
-                variant="secondary" 
-                className="px-6 py-3"
-              >
-                Explore Projects
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
