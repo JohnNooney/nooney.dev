@@ -63,18 +63,18 @@ const projects = [
     ],
     links: { github: 'https://github.com/JohnNooney/BookMeetings' },
   },
-  {
-    dotCls: 'orange',
-    type: 'Personal · Open Source',
-    title: 'CSV Parser',
-    desc: 'A tool to parse CSVs containing customer data and add them to a database via a Spring REST API.',
-    pills: [
-      { label: 'Spring', cls: 'orange' },
-      { label: 'Java', cls: '' },
-      { label: 'PostgreSQL', cls: '' },
-    ],
-    links: { github: 'https://github.com/JohnNooney/java-rest-app-demo' },
-  },
+  // {
+  //   dotCls: 'orange',
+  //   type: 'Personal · Open Source',
+  //   title: 'CSV Parser',
+  //   desc: 'A tool to parse CSVs containing customer data and add them to a database via a Spring REST API.',
+  //   pills: [
+  //     { label: 'Spring', cls: 'orange' },
+  //     { label: 'Java', cls: '' },
+  //     { label: 'PostgreSQL', cls: '' },
+  //   ],
+  //   links: { github: 'https://github.com/JohnNooney/java-rest-app-demo' },
+  // },
 ];
 
 export default function Projects() {

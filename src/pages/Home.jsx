@@ -53,30 +53,30 @@ export default function Home() {
             <div className="term-dot" />
             <div className="term-dot" />
             <div className="term-dot" />
-            <span className="term-title">zsh — john@dev-machine</span>
+            <span className="term-title">zsh — john@dev-01</span>
           </div>
           <div className="terminal-body">
             <div>
-              <span className="t-prompt">john@dev</span>{' '}
+              <span className="t-prompt">john@dev-01</span>{' '}
               <span className="t-comment">~</span>{' '}
               <span className="t-cmd" ref={cmdRef}>cat whoami.yaml</span>
             </div>
             <div style={{ marginTop: 8 }}>
               <span className="t-key">name:</span> <span className="t-val">"John Nooney"</span><br />
-              <span className="t-key">role:</span> <span className="t-val">"Software Engineer II / DevOps"</span><br />
+              <span className="t-key">role:</span> <span className="t-val">"Full Stack Engineer / DevOps"</span><br />
               <span className="t-key">yoe:</span> <span className="t-val">4+</span><br />
               <span className="t-key">stack:</span><br />
               &nbsp;&nbsp;<span className="t-comment"># languages</span><br />
               &nbsp;&nbsp;- <span className="t-val">C#, Java, TypeScript, Python</span><br />
               &nbsp;&nbsp;<span className="t-comment"># infra</span><br />
-              &nbsp;&nbsp;- <span className="t-val">K8s, Terraform, Jenkins, GCP</span><br />
+              &nbsp;&nbsp;- <span className="t-val">K8s, Terraform, Jenkins, GCP, AWS</span><br />
               &nbsp;&nbsp;<span className="t-comment"># frontend</span><br />
               &nbsp;&nbsp;- <span className="t-val">React, Angular, Flutter</span><br />
               <span className="t-key">education:</span> <span className="t-val">"BSc (Hons) Computer Science"</span><br />
               <span className="t-key">open_to_work:</span> <span className="t-val">true</span>
             </div>
             <div style={{ marginTop: 12 }}>
-              <span className="t-prompt">john@dev</span>{' '}
+              <span className="t-prompt">john@dev-01</span>{' '}
               <span className="t-comment">~</span>{' '}
               <span className="t-cursor" />
             </div>
