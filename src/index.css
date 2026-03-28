@@ -372,6 +372,13 @@ nav.site-nav {
   letter-spacing: -0.02em;
 }
 .uptime-value.warn { color: var(--accent3); }
+.uptime-subtitle {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-top: 8px;
+}
 .uptime-bar {
   display: flex; gap: 2px; margin-top: 8px;
 }

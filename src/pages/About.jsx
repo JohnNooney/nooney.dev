@@ -111,7 +111,7 @@ export default function About() {
                     Software Engineer
                   </h2>
                   <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                    Full Stack Engineer & DevOps Specialist with 4+ years of enterprise-grade 
+                    Full Stack Engineer & DevOps Engineer with 4+ years of enterprise-grade 
                     experience building and scaling resilient applications. I bridge the gap between 
                     development and operations, leveraging a deep background in full-stack development to optimize CI/CD pipelines, 
                     containerization, and cloud infrastructure. Having spent the last 2 years focused on DevOps transformation, 

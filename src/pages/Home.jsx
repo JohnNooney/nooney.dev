@@ -22,11 +22,11 @@ export default function Home() {
   return (
     <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
       <div className="hero-left fade-in">
-        <div className="hero-eyebrow">// full stack engineer &amp; devops specialist</div>
+        <div className="hero-eyebrow">// full stack engineer &amp; devops engineer</div>
         <div className="hero-name">
           JOHN<br /><span className="line2">NOONEY</span>
         </div>
-        <div className="hero-title">Full Stack Engineer · DevOps Specialist</div>
+        <div className="hero-title">Full Stack Engineer · DevOps Engineer</div>
         <p className="hero-desc">
           4+ years building and scaling resilient enterprise applications. I bridge the gap between
           development and operations, from full-stack development to CI/CD pipelines,
@@ -85,52 +85,24 @@ export default function Home() {
 
         <div className="uptime-grid">
           <div className="uptime-cell">
-            <div className="uptime-label">Years Experience</div>
-            <div className="uptime-value">4+</div>
-            <div className="uptime-bar">
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg off" /><div className="uptime-seg off" />
-              <div className="uptime-seg off" /><div className="uptime-seg off" />
-              <div className="uptime-seg off" /><div className="uptime-seg off" />
-            </div>
+            <div className="uptime-label">Deployments Owned</div>
+            <div className="uptime-value">300+</div>
+            <div className="uptime-subtitle">Across CANDESCENT, NCR VOYIX & NCR</div>
           </div>
           <div className="uptime-cell">
             <div className="uptime-label">Technologies</div>
             <div className="uptime-value">24+</div>
-            <div className="uptime-bar">
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg off" /><div className="uptime-seg off" />
-            </div>
+            <div className="uptime-subtitle">Used across all roles</div>
           </div>
           <div className="uptime-cell">
             <div className="uptime-label">Release Predictability</div>
             <div className="uptime-value warn">+77%</div>
-            <div className="uptime-bar">
-              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
-              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
-              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
-              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
-              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
-              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
-              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
-              <div className="uptime-seg off" /><div className="uptime-seg off" />
-              <div className="uptime-seg off" />
-            </div>
+            <div className="uptime-subtitle">Across NCR VOYIX and Candescent</div>
           </div>
           <div className="uptime-cell">
             <div className="uptime-label">Deploy Freq. Increase</div>
             <div className="uptime-value">+200%</div>
-            <div className="uptime-bar">
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg" /><div className="uptime-seg" />
-              <div className="uptime-seg" /><div className="uptime-seg" />
-            </div>
+            <div className="uptime-subtitle">Across NCR VOYIX and Candescent</div>
           </div>
         </div>
       </div>
