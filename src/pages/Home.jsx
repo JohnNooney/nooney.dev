@@ -22,11 +22,11 @@ export default function Home() {
   return (
     <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
       <div className="hero-left fade-in">
-        <div className="hero-eyebrow">// full stack engineer &amp; devops engineer</div>
+        <div className="hero-eyebrow">// full stack &amp; devops engineer</div>
         <div className="hero-name">
           JOHN<br /><span className="line2">NOONEY</span>
         </div>
-        <div className="hero-title">Full Stack Engineer · DevOps Engineer</div>
+        <div className="hero-title">Full Stack · DevOps Engineer</div>
         <p className="hero-desc">
           4+ years building and scaling resilient enterprise applications. I bridge the gap between
           development and operations, from full-stack development to CI/CD pipelines,
@@ -63,7 +63,7 @@ export default function Home() {
             </div>
             <div style={{ marginTop: 8 }}>
               <span className="t-key">name:</span> <span className="t-val">"John Nooney"</span><br />
-              <span className="t-key">role:</span> <span className="t-val">"Full Stack Engineer / DevOps"</span><br />
+              <span className="t-key">role:</span> <span className="t-val">"Full Stack / DevOps"</span><br />
               <span className="t-key">yoe:</span> <span className="t-val">4+</span><br />
               <span className="t-key">stack:</span><br />
               &nbsp;&nbsp;<span className="t-comment"># languages</span><br />
