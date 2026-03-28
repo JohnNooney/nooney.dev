@@ -1,100 +1,139 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet';
-import Link from '../components/Link';
-import { TypeAnimation } from 'react-type-animation';
+import { useEffect, useRef } from 'react';
 
-const Home = () => {
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
+export default function Home() {
+  const cmdRef = useRef(null);
+
+  useEffect(() => {
+    const cmds = [
+      'kubectl get pods -A | grep -v Running',
+      'terraform plan -out=infra.tfplan',
+      'docker stats --no-stream | head -5',
+      'helm upgrade --install app ./chart',
+      'gcloud builds list --limit=5',
+    ];
+    let ci = 0;
+    const interval = setInterval(() => {
+      ci = (ci + 1) % cmds.length;
+      if (cmdRef.current) cmdRef.current.textContent = cmds[ci];
+    }, 12000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <>
-      <Helmet>
-        <title>John Nooney - Portfolio | Software Engineer</title>
-        <meta name="description" content="Welcome to the professional portfolio of John Nooney. Explore software development projects, skills, and experience." />
-      </Helmet>
-      <section className="min-h-screen bg-gray-100 dark:bg-gray-900 py-16">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center"
-            initial={fadeIn.initial}
-            animate={fadeIn.animate}
-            transition={fadeIn.transition}
-          >
-            <div className="p-10 mb-15">
-              <h1 className="text-4xl md:text-6xl font-bold mb-8 text-gray-900 dark:text-white min-h-[3em] flex items-center justify-center">
-                <TypeAnimation
-                  sequence={["Hi, I'm John Nooney", 1000]}
-                  wrapper="span"
-                  speed={20}
-                  className="text-blue-600 dark:text-blue-400 block"
-                  repeat={0}
-                />
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed">
-                <span className="font-semibold text-gray-900 dark:text-white">Full-Stack Software Engineer</span> delivering end-to-end solutions, from initial architecture and design to production deployment and cloud infrastructure
-              </p>
-              
-              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    to="/contact"
-                    className="w-64 inline-flex items-center justify-center px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white transition-all duration-200 shadow-md hover:shadow-xl"
-                  >
-                    Get in Touch
-                  </Link>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    to="/about"
-                    className="w-64 inline-flex items-center justify-center px-8 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-md hover:shadow-xl"
-                  >
-                    About Me
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Architecture & Design',
-                  description: 'Crafting scalable system architectures with clean, maintainable code patterns and strategic technical decisions'
-                },
-                {
-                  title: 'Full-Stack Development',
-                  description: 'Building complete solutions from intuitive frontends to robust backend APIs with seamless integration'
-                },
-                {
-                  title: 'Cloud & DevOps',
-                  description: 'Deploying production-ready applications with CI/CD pipelines, monitoring, and infrastructure as code'
-                }
-              ].map((skill, index) => (
-                <motion.div
-                  key={skill.title}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="bg-gray-50/80 dark:bg-gray-700/60 p-6 rounded-xl shadow-sm">
-                    <h3 className="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">
-                      {skill.title}
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      {skill.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+    <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
+      <div className="hero-left fade-in">
+        <div className="hero-eyebrow">// full stack engineer &amp; devops specialist</div>
+        <div className="hero-name">
+          JOHN<br /><span className="line2">NOONEY</span>
         </div>
-      </section>
-    </>
-  );
-};
+        <div className="hero-title">Full Stack Engineer · DevOps Specialist</div>
+        <p className="hero-desc">
+          4+ years building and scaling resilient enterprise applications. I bridge the gap between
+          development and operations — from full-stack development to CI/CD pipelines,
+          containerization, and cloud infrastructure.
+        </p>
+        <div className="hero-tags">
+          <span className="tag accent">Kubernetes</span>
+          <span className="tag green">GCP</span>
+          <span className="tag orange">Terraform</span>
+          <span className="tag">TypeScript / Java / C#</span>
+          <span className="tag">CI/CD</span>
+          <span className="tag">Docker</span>
+          <span className="tag">React</span>
+        </div>
+        <div className="hero-cta">
+          <a href="#contact" className="btn-primary">→ Let's Talk</a>
+          <a href="#projects" className="btn-ghost">View Work</a>
+        </div>
+      </div>
 
-export default Home;
+      <div className="hero-right fade-in" style={{ animationDelay: '0.3s' }}>
+        <div className="terminal">
+          <div className="terminal-header">
+            <div className="term-dot" />
+            <div className="term-dot" />
+            <div className="term-dot" />
+            <span className="term-title">zsh — john@dev-machine</span>
+          </div>
+          <div className="terminal-body">
+            <div>
+              <span className="t-prompt">john@dev</span>{' '}
+              <span className="t-comment">~</span>{' '}
+              <span className="t-cmd" ref={cmdRef}>cat whoami.yaml</span>
+            </div>
+            <div style={{ marginTop: 8 }}>
+              <span className="t-key">name:</span> <span className="t-val">"John Nooney"</span><br />
+              <span className="t-key">role:</span> <span className="t-val">"Software Engineer II / DevOps"</span><br />
+              <span className="t-key">yoe:</span> <span className="t-val">4+</span><br />
+              <span className="t-key">stack:</span><br />
+              &nbsp;&nbsp;<span className="t-comment"># languages</span><br />
+              &nbsp;&nbsp;- <span className="t-val">C#, Java, TypeScript, Python</span><br />
+              &nbsp;&nbsp;<span className="t-comment"># infra</span><br />
+              &nbsp;&nbsp;- <span className="t-val">K8s, Terraform, Jenkins, GCP</span><br />
+              &nbsp;&nbsp;<span className="t-comment"># frontend</span><br />
+              &nbsp;&nbsp;- <span className="t-val">React, Angular, Flutter</span><br />
+              <span className="t-key">education:</span> <span className="t-val">"BSc (Hons) Computer Science"</span><br />
+              <span className="t-key">open_to_work:</span> <span className="t-val">true</span>
+            </div>
+            <div style={{ marginTop: 12 }}>
+              <span className="t-prompt">john@dev</span>{' '}
+              <span className="t-comment">~</span>{' '}
+              <span className="t-cursor" />
+            </div>
+          </div>
+        </div>
+
+        <div className="uptime-grid">
+          <div className="uptime-cell">
+            <div className="uptime-label">Years Experience</div>
+            <div className="uptime-value">4+</div>
+            <div className="uptime-bar">
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg off" /><div className="uptime-seg off" />
+              <div className="uptime-seg off" /><div className="uptime-seg off" />
+              <div className="uptime-seg off" /><div className="uptime-seg off" />
+            </div>
+          </div>
+          <div className="uptime-cell">
+            <div className="uptime-label">Technologies</div>
+            <div className="uptime-value">24+</div>
+            <div className="uptime-bar">
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg off" /><div className="uptime-seg off" />
+            </div>
+          </div>
+          <div className="uptime-cell">
+            <div className="uptime-label">Release Predictability</div>
+            <div className="uptime-value warn">+77%</div>
+            <div className="uptime-bar">
+              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
+              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
+              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
+              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
+              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
+              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
+              <div className="uptime-seg" style={{ background: 'var(--accent3)' }} />
+              <div className="uptime-seg off" /><div className="uptime-seg off" />
+              <div className="uptime-seg off" />
+            </div>
+          </div>
+          <div className="uptime-cell">
+            <div className="uptime-label">Deploy Freq. Increase</div>
+            <div className="uptime-value">+200%</div>
+            <div className="uptime-bar">
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg" /><div className="uptime-seg" />
+              <div className="uptime-seg" /><div className="uptime-seg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
