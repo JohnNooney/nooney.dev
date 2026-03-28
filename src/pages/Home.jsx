@@ -29,7 +29,7 @@ export default function Home() {
         <div className="hero-title">Full Stack Engineer · DevOps Specialist</div>
         <p className="hero-desc">
           4+ years building and scaling resilient enterprise applications. I bridge the gap between
-          development and operations — from full-stack development to CI/CD pipelines,
+          development and operations, from full-stack development to CI/CD pipelines,
           containerization, and cloud infrastructure.
         </p>
         <div className="hero-tags">
