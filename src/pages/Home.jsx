@@ -86,7 +86,7 @@ export default function Home() {
         <div className="uptime-grid">
           <div className="uptime-cell">
             <div className="uptime-label">Deployments Owned</div>
-            <div className="uptime-value">300+</div>
+            <div className="uptime-value">100+</div>
             <div className="uptime-subtitle">Across CANDESCENT, NCR VOYIX & NCR</div>
           </div>
           <div className="uptime-cell">
