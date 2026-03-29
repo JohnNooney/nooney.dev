@@ -3,21 +3,21 @@ import { useEffect, useRef } from 'react';
 export default function Home() {
   const cmdRef = useRef(null);
 
-  useEffect(() => {
-    const cmds = [
-      'kubectl get pods -A | grep -v Running',
-      'terraform plan -out=infra.tfplan',
-      'docker stats --no-stream | head -5',
-      'helm upgrade --install app ./chart',
-      'gcloud builds list --limit=5',
-    ];
-    let ci = 0;
-    const interval = setInterval(() => {
-      ci = (ci + 1) % cmds.length;
-      if (cmdRef.current) cmdRef.current.textContent = cmds[ci];
-    }, 12000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const cmds = [
+  //     'kubectl get pods -A | grep -v Running',
+  //     'terraform plan -out=infra.tfplan',
+  //     'docker stats --no-stream | head -5',
+  //     'helm upgrade --install app ./chart',
+  //     'gcloud builds list --limit=5',
+  //   ];
+  //   let ci = 0;
+  //   const interval = setInterval(() => {
+  //     ci = (ci + 1) % cmds.length;
+  //     if (cmdRef.current) cmdRef.current.textContent = cmds[ci];
+  //   }, 12000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
