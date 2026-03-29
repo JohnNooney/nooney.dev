@@ -96,12 +96,12 @@ export default function Home() {
           </div>
           <div className="uptime-cell">
             <div className="uptime-label">Release Predictability</div>
-            <div className="uptime-value warn">+77%</div>
+            <div className="uptime-value warn">1/10 → 8/10</div>
             <div className="uptime-subtitle">Across NCR VOYIX and Candescent</div>
           </div>
           <div className="uptime-cell">
             <div className="uptime-label">Deploy Freq. Increase</div>
-            <div className="uptime-value">+200%</div>
+            <div className="uptime-value">2x/mo → Weekly</div>
             <div className="uptime-subtitle">Across NCR VOYIX and Candescent</div>
           </div>
         </div>

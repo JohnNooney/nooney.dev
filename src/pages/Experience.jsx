@@ -16,7 +16,7 @@ const experiences = [
     date: 'Aug 2023 — Oct 2024',
     role: 'Software Engineer II',
     company: 'NCR VOYIX · Scotland',
-    desc: 'Created a release support team to improve development and production collaboration. Improved release predictability by 77% through multi-stage deployment process and increased deployment frequency by 200% using Jenkins pipelines and automation scripts.',
+    desc: 'Created a release support team to improve development and production collaboration. Improved releases from 1 out of 10 deployed without issue to 8 out of 10 through multi-stage deployment process, and increased deployment frequency from twice a month to weekly using Jenkins pipelines and automation scripts.',
     pills: [
       { label: 'Jenkins', cls: 'orange' },
       { label: 'Kubernetes', cls: '' },

@@ -14,7 +14,7 @@ const skillCards = [
   {
     icon: '◈',
     title: 'CI/CD & Automation',
-    desc: 'End-to-end pipeline design from code commit to production. Improved release predictability by 77% and deployment frequency by 200%.',
+    desc: 'End-to-end pipeline design from code commit to production. Expertise in building automated deployment workflows, release orchestration, and continuous delivery systems that improve reliability and velocity.',
     pills: [
       { label: 'Jenkins', cls: 'orange' },
       { label: 'GitHub Actions', cls: '' },
