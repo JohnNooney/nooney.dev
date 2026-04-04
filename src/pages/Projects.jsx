@@ -13,7 +13,7 @@ const projects = [
     ],
     links: { demo: 'https://docmarenco.com' },
   },
-      {
+  {
     dotCls: 'green',
     type: 'Personal · Open Source',
     title: 'Hadoop Helper',
@@ -25,6 +25,20 @@ const projects = [
       { label: 'Docker', cls: 'accent' }
     ],
     links: { github: 'https://github.com/JohnNooney/HadoopHelper' },
+  },
+  {
+    dotCls: 'green',
+    type: 'Personal · Open Source',
+    title: 'RPi Airplay Reciever',
+    desc: 'A Raspberry Pi-based AirPlay receiver that replicates the cloud-connected architecture of commercial streaming devices like Chromecast and Apple TV. Features a cloud-hosted admin dashboard for real-time device telemetry and analytics, built atop the RPiPlay open-source receiver stack.',
+    pills: [
+      { label: 'AWS', cls: 'orange' },
+      { label: 'Python', cls: 'accent' },
+      { label: 'Node.js', cls: '' },
+      { label: 'Raspberry Pi', cls: '' },
+      { label: 'Docker', cls: '' }
+    ],
+    links: { github: 'https://github.com/JohnNooney/RPiAirplayReciever' },
   },
   {
     dotCls: 'orange',
@@ -50,19 +64,19 @@ const projects = [
       { label: 'OpenAI', cls: '' },
     ],
     links: {},
-  },
-  {
-    dotCls: 'orange',
-    type: 'Collaboration · In Progress',
-    title: 'Face First',
-    desc: 'A video-first dating application using real-time WebRTC communication. Think Omegle combined with Tinder.',
-    pills: [
-      { label: 'Flutter', cls: 'accent' },
-      { label: 'Firestore', cls: '' },
-      { label: 'WebRTC', cls: 'green' },
-    ],
-    links: {},
   }
+  // {
+  //   dotCls: 'orange',
+  //   type: 'Collaboration · In Progress',
+  //   title: 'Face First',
+  //   desc: 'A video-first dating application using real-time WebRTC communication. Think Omegle combined with Tinder.',
+  //   pills: [
+  //     { label: 'Flutter', cls: 'accent' },
+  //     { label: 'Firestore', cls: '' },
+  //     { label: 'WebRTC', cls: 'green' },
+  //   ],
+  //   links: {},
+  // }
   // {
   //   dotCls: 'green',
   //   type: 'Personal · Open Source',
