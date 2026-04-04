@@ -3,21 +3,21 @@ import { useEffect, useRef } from 'react';
 export default function Home() {
   const cmdRef = useRef(null);
 
-  useEffect(() => {
-    const cmds = [
-      'kubectl get pods -A | grep -v Running',
-      'terraform plan -out=infra.tfplan',
-      'docker stats --no-stream | head -5',
-      'helm upgrade --install app ./chart',
-      'gcloud builds list --limit=5',
-    ];
-    let ci = 0;
-    const interval = setInterval(() => {
-      ci = (ci + 1) % cmds.length;
-      if (cmdRef.current) cmdRef.current.textContent = cmds[ci];
-    }, 12000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const cmds = [
+  //     'kubectl get pods -A | grep -v Running',
+  //     'terraform plan -out=infra.tfplan',
+  //     'docker stats --no-stream | head -5',
+  //     'helm upgrade --install app ./chart',
+  //     'gcloud builds list --limit=5',
+  //   ];
+  //   let ci = 0;
+  //   const interval = setInterval(() => {
+  //     ci = (ci + 1) % cmds.length;
+  //     if (cmdRef.current) cmdRef.current.textContent = cmds[ci];
+  //   }, 12000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
@@ -86,7 +86,7 @@ export default function Home() {
         <div className="uptime-grid">
           <div className="uptime-cell">
             <div className="uptime-label">Deployments Owned</div>
-            <div className="uptime-value">300+</div>
+            <div className="uptime-value">100+</div>
             <div className="uptime-subtitle">Across CANDESCENT, NCR VOYIX & NCR</div>
           </div>
           <div className="uptime-cell">
@@ -96,12 +96,12 @@ export default function Home() {
           </div>
           <div className="uptime-cell">
             <div className="uptime-label">Release Predictability</div>
-            <div className="uptime-value warn">+77%</div>
+            <div className="uptime-value warn">1/10 → 8/10</div>
             <div className="uptime-subtitle">Across NCR VOYIX and Candescent</div>
           </div>
           <div className="uptime-cell">
             <div className="uptime-label">Deploy Freq. Increase</div>
-            <div className="uptime-value">+200%</div>
+            <div className="uptime-value">2x/mo → Weekly</div>
             <div className="uptime-subtitle">Across NCR VOYIX and Candescent</div>
           </div>
         </div>
