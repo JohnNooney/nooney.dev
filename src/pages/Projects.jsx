@@ -9,7 +9,7 @@ const projects = [
       { label: 'React', cls: 'accent' },
       { label: 'Node.js', cls: '' },
       { label: 'Firestore', cls: '' },
-      { label: 'Cloud Functions', cls: 'green' },
+      { label: 'GCP Cloud Functions', cls: 'green' },
     ],
     links: { demo: 'https://docmarenco.com' },
   },
