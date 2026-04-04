@@ -13,11 +13,24 @@ const projects = [
     ],
     links: { demo: 'https://docmarenco.com' },
   },
-  {
+      {
     dotCls: 'green',
+    type: 'Personal · Open Source',
+    title: 'Hadoop Helper',
+    desc: 'Reduces Hadoop setup time from hours to minutes by providing automated UI-driven provisioning of containerized clusters, empowering developers to experiment with big data infrastructure without manual configuration.',
+    pills: [
+      { label: 'React', cls: '' },
+      { label: 'Node.js', cls: '' },
+      { label: 'Hadoop', cls: '' },
+      { label: 'Docker', cls: 'accent' }
+    ],
+    links: { github: 'https://github.com/JohnNooney/HadoopHelper' },
+  },
+  {
+    dotCls: 'orange',
     type: 'Collaboration · In Progress',
     title: 'Game Guru',
-    desc: 'An iOS application that uses AI to explain, setup, and manage collections of rule books for tabletop games. Built with SwiftUI and Firebase.',
+    desc: 'An intelligent iOS companion that leverages RAG based semantic search to query tabletop rulebooks and surface precise, contextual answers. Eliminating tedious manual lookups and streamlining game setup. Built with SwiftUI and Firebase.',
     pills: [
       { label: 'SwiftUI', cls: 'accent' },
       { label: 'Firebase', cls: '' },
@@ -39,7 +52,7 @@ const projects = [
     links: {},
   },
   {
-    dotCls: '',
+    dotCls: 'orange',
     type: 'Collaboration · In Progress',
     title: 'Face First',
     desc: 'A video-first dating application using real-time WebRTC communication. Think Omegle combined with Tinder.',
@@ -49,20 +62,20 @@ const projects = [
       { label: 'WebRTC', cls: 'green' },
     ],
     links: {},
-  },
-  {
-    dotCls: 'green',
-    type: 'Personal · Open Source',
-    title: 'Meeting Booker',
-    desc: 'A WPF MVVM application that allows users to book meetings and view their schedule with a SQL Server backend.',
-    pills: [
-      { label: 'WPF', cls: '' },
-      { label: '.NET', cls: 'accent' },
-      { label: 'MSSQL', cls: '' },
-      { label: 'Entity Framework', cls: '' },
-    ],
-    links: { github: 'https://github.com/JohnNooney/BookMeetings' },
-  },
+  }
+  // {
+  //   dotCls: 'green',
+  //   type: 'Personal · Open Source',
+  //   title: 'Meeting Booker',
+  //   desc: 'A WPF MVVM application that allows users to book meetings and view their schedule with a SQL Server backend.',
+  //   pills: [
+  //     { label: 'WPF', cls: '' },
+  //     { label: '.NET', cls: 'accent' },
+  //     { label: 'MSSQL', cls: '' },
+  //     { label: 'Entity Framework', cls: '' },
+  //   ],
+  //   links: { github: 'https://github.com/JohnNooney/BookMeetings' },
+  // },
   // {
   //   dotCls: 'orange',
   //   type: 'Personal · Open Source',
@@ -107,7 +120,7 @@ export default function Projects() {
                 <div className="project-links">
                   {p.links.demo && (
                     <a href={p.links.demo} target="_blank" rel="noopener noreferrer">
-                      Live Demo →
+                      Live Site →
                     </a>
                   )}
                   {p.links.github && (
