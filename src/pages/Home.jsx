@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
       <div className="hero-left fade-in">
-        <div className="hero-eyebrow">// full stack &amp; devops engineer</div>
+        <div className="hero-eyebrow">// based in Scotland</div>
         <div className="hero-name">
           JOHN<br /><span className="line2">NOONEY</span>
         </div>
