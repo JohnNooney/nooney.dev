@@ -35,7 +35,7 @@ export default function Home() {
         </p>
         <div className="hero-tags">
           <span className="tag accent">Kubernetes</span>
-          <span className="tag green">GCP</span>
+          <span className="tag green">GCP / AWS</span>
           <span className="tag orange">Terraform</span>
           <span className="tag">TypeScript / Java / C#</span>
           <span className="tag">CI/CD</span>
