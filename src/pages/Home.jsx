@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
 
 export default function Home() {
   const cmdRef = useRef(null);
@@ -20,6 +21,62 @@ export default function Home() {
   // }, []);
 
   return (
+    <>
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>John Nooney | Software Engineer & DevOps Specialist</title>
+        <meta name="description" content="Full Stack & DevOps Engineer with 4+ years of enterprise experience. Specializing in Kubernetes, GCP, Terraform, CI/CD pipelines, and cloud-native applications." />
+        <meta name="keywords" content="John Nooney, Software Engineer, DevOps Engineer, Full Stack Developer, Cloud Computing, Kubernetes, GCP, Terraform, React, Java, C#, CI/CD, Portfolio" />
+        <link rel="canonical" href="https://nooney.dev/" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nooney.dev/" />
+        <meta property="og:title" content="John Nooney | Software Engineer & DevOps Specialist" />
+        <meta property="og:description" content="Full Stack & DevOps Engineer with 4+ years of enterprise experience. Specializing in Kubernetes, GCP, and cloud-native development." />
+        <meta property="og:image" content="https://nooney.dev/profile-pic.jpg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://nooney.dev/" />
+        <meta property="twitter:title" content="John Nooney | Software Engineer & DevOps Specialist" />
+        <meta property="twitter:description" content="Full Stack & DevOps Engineer with 4+ years of enterprise experience in cloud infrastructure and CI/CD." />
+        <meta property="twitter:image" content="https://nooney.dev/profile-pic.jpg" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "John Nooney",
+            "jobTitle": "Software Engineer & DevOps Specialist",
+            "url": "https://nooney.dev/",
+            "image": "https://nooney.dev/profile-pic.jpg",
+            "description": "Full Stack & DevOps Engineer with 4+ years of enterprise experience",
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "University of Abertay"
+            },
+            "knowsAbout": [
+              "Software Engineering",
+              "DevOps",
+              "Cloud Computing",
+              "Kubernetes",
+              "Google Cloud Platform",
+              "Terraform",
+              "CI/CD",
+              "Java",
+              "C#",
+              "React",
+              "Docker"
+            ],
+            "sameAs": [
+              "https://linkedin.com/in/john-nooney",
+              "https://github.com/john-nooney"
+            ]
+          })}
+        </script>
+      </Helmet>
     <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
       <div className="hero-left fade-in">
         <div className="hero-eyebrow">// based in Scotland</div>
@@ -107,5 +164,6 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </>
   );
 }
