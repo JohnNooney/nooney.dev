@@ -52,8 +52,60 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About John Nooney | Software Engineer</title>
-        <meta name="description" content="Learn more about John Nooney, a software engineer detailing his background, passion for technology, and professional journey." />
+        {/* Primary Meta Tags */}
+        <title>About John Nooney | Software Engineer & DevOps Specialist</title>
+        <meta name="description" content="Meet John Nooney, a Software Engineer with 4+ years of enterprise experience in Full Stack Development, DevOps, Cloud Computing (GCP), and Kubernetes. Computer Science graduate from University of Abertay." />
+        <meta name="keywords" content="John Nooney, Software Engineer, DevOps Engineer, Full Stack Developer, Cloud Computing, Kubernetes, GCP, Terraform, React, Java, .NET, Microservices, CI/CD, Portfolio" />
+        <link rel="canonical" href="https://nooney.dev/about" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://nooney.dev/about" />
+        <meta property="og:title" content="About John Nooney | Software Engineer & DevOps Specialist" />
+        <meta property="og:description" content="Software Engineer with 4+ years of enterprise experience in Full Stack Development, DevOps, and Cloud Computing. Specializing in GCP, Kubernetes, and microservices architecture." />
+        <meta property="og:image" content="https://nooney.dev/profile-pic.jpg" />
+        <meta property="profile:first_name" content="John" />
+        <meta property="profile:last_name" content="Nooney" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://nooney.dev/about" />
+        <meta property="twitter:title" content="About John Nooney | Software Engineer & DevOps Specialist" />
+        <meta property="twitter:description" content="Software Engineer with 4+ years of enterprise experience in Full Stack Development, DevOps, and Cloud Computing." />
+        <meta property="twitter:image" content="https://nooney.dev/profile-pic.jpg" />
+
+        {/* Structured Data - Person Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "John Nooney",
+            "jobTitle": "Software Engineer",
+            "description": "Full Stack & DevOps Engineer with 4+ years of enterprise-grade experience",
+            "url": "https://nooney.dev/about",
+            "image": "https://nooney.dev/profile-pic.jpg",
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "University of Abertay"
+            },
+            "knowsAbout": [
+              "Software Engineering",
+              "DevOps",
+              "Cloud Computing",
+              "Kubernetes",
+              "Google Cloud Platform",
+              "Terraform",
+              "Java",
+              "React",
+              "Microservices",
+              "CI/CD"
+            ],
+            "sameAs": [
+              "https://linkedin.com/in/john-nooney",
+              "https://github.com/john-nooney"
+            ]
+          })}
+        </script>
       </Helmet>
       <section className="min-h-screen bg-gray-100 dark:bg-gray-900 py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
