@@ -7,6 +7,7 @@ const skillCards = [
       { label: 'Kubernetes', cls: 'accent' },
       { label: 'Helm', cls: 'accent' },
       { label: 'GCP', cls: '' },
+      { label: 'AWS', cls: '' },
       { label: 'Terraform', cls: 'accent' },
       { label: 'Docker', cls: '' },
     ],
