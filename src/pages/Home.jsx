@@ -10,6 +10,8 @@ const heroTags = [
   'React',
 ];
 
+const years = new Date().getFullYear() - 2021;
+
 export default function Home() {
   return (
     <>
@@ -21,7 +23,7 @@ export default function Home() {
         </div>
         <div className="hero-title">Full Stack · DevOps Engineer</div>
         <p className="hero-desc">
-          5+ years building and scaling resilient enterprise applications. I bridge the gap between
+          {years}+ years building and scaling resilient enterprise applications. I bridge the gap between
           development and operations, from full-stack development to CI/CD pipelines,
           containerization, and cloud infrastructure.
         </p>
