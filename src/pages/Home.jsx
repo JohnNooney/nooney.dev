@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import { getPillClass } from '../data/techColors';
 
 const heroTags = [
@@ -12,35 +11,17 @@ const heroTags = [
 ];
 
 export default function Home() {
-  const cmdRef = useRef(null);
-
-  // useEffect(() => {
-  //   const cmds = [
-  //     'kubectl get pods -A | grep -v Running',
-  //     'terraform plan -out=infra.tfplan',
-  //     'docker stats --no-stream | head -5',
-  //     'helm upgrade --install app ./chart',
-  //     'gcloud builds list --limit=5',
-  //   ];
-  //   let ci = 0;
-  //   const interval = setInterval(() => {
-  //     ci = (ci + 1) % cmds.length;
-  //     if (cmdRef.current) cmdRef.current.textContent = cmds[ci];
-  //   }, 12000);
-  //   return () => clearInterval(interval);
-  // }, []);
-
   return (
     <>
     <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
       <div className="hero-left fade-in">
-        <div className="hero-eyebrow">// based in Scotland</div>
+        <div className="hero-eyebrow">// based in Germany (soon)</div>
         <div className="hero-name">
           JOHN<br /><span className="line2">NOONEY</span>
         </div>
         <div className="hero-title">Full Stack · DevOps Engineer</div>
         <p className="hero-desc">
-          4+ years building and scaling resilient enterprise applications. I bridge the gap between
+          5+ years building and scaling resilient enterprise applications. I bridge the gap between
           development and operations, from full-stack development to CI/CD pipelines,
           containerization, and cloud infrastructure.
         </p>
@@ -72,20 +53,12 @@ export default function Home() {
             <div>
               <span className="t-prompt">john@dev-01</span>{' '}
               <span className="t-comment">~</span>{' '}
-              <span className="t-cmd" ref={cmdRef}>cat whoami.yaml</span>
+              <span className="t-cmd">cat status.yaml</span>
             </div>
             <div style={{ marginTop: 8 }}>
-              <span className="t-key">name:</span> <span className="t-val">"John Nooney"</span><br />
-              <span className="t-key">role:</span> <span className="t-val">"Full Stack / DevOps"</span><br />
-              <span className="t-key">yoe:</span> <span className="t-val">4+</span><br />
-              <span className="t-key">stack:</span><br />
-              &nbsp;&nbsp;<span className="t-comment"># languages</span><br />
-              &nbsp;&nbsp;- <span className="t-val">C#, Java, TypeScript, Python</span><br />
-              &nbsp;&nbsp;<span className="t-comment"># infra</span><br />
-              &nbsp;&nbsp;- <span className="t-val">K8s, Terraform, Jenkins, GCP, AWS</span><br />
-              &nbsp;&nbsp;<span className="t-comment"># frontend</span><br />
-              &nbsp;&nbsp;- <span className="t-val">React, Angular, Flutter</span><br />
               <span className="t-key">education:</span> <span className="t-val">"BSc (Hons) Computer Science"</span><br />
+              <span className="t-key">focus:</span> <span className="t-val">"Agentic workflows &amp; automation (n8n, RAGFlow)"</span><br />
+              <span className="t-key">available_for:</span> <span className="t-val">"remote / hybrid roles"</span><br />
               <span className="t-key">open_to_work:</span> <span className="t-val">true</span>
             </div>
             <div style={{ marginTop: 12 }}>
