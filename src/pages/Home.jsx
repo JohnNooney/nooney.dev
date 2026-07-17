@@ -18,9 +18,9 @@ export default function Home() {
     <section className="hero" style={{ borderTop: 'none', padding: 0 }}>
       <div className="hero-left fade-in">
         <div className="hero-eyebrow">// based in Germany (soon)</div>
-        <div className="hero-name">
+        <h1 className="hero-name">
           JOHN<br /><span className="line2">NOONEY</span>
-        </div>
+        </h1>
         <div className="hero-title">Full Stack · DevOps Engineer</div>
         <p className="hero-desc">
           {years}+ years building and scaling resilient enterprise applications. I bridge the gap between
