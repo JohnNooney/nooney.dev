@@ -1,4 +1,15 @@
 import { useEffect, useRef } from 'react';
+import { getPillClass } from '../data/techColors';
+
+const heroTags = [
+  'Kubernetes',
+  'GCP / AWS',
+  'Terraform',
+  'TypeScript / Java / C#',
+  'CI/CD',
+  'Docker',
+  'React',
+];
 
 export default function Home() {
   const cmdRef = useRef(null);
@@ -34,13 +45,14 @@ export default function Home() {
           containerization, and cloud infrastructure.
         </p>
         <div className="hero-tags">
-          <span className="tag accent">Kubernetes</span>
-          <span className="tag green">GCP / AWS</span>
-          <span className="tag orange">Terraform</span>
-          <span className="tag">TypeScript / Java / C#</span>
-          <span className="tag">CI/CD</span>
-          <span className="tag">Docker</span>
-          <span className="tag">React</span>
+          {heroTags.map((label) => {
+            const cls = getPillClass(label);
+            return (
+              <span key={label} className={`tag${cls ? ' ' + cls : ''}`}>
+                {label}
+              </span>
+            );
+          })}
         </div>
         <div className="hero-cta">
           <a href="#contact" className="btn-primary">→ Let's Talk</a>
@@ -97,7 +109,7 @@ export default function Home() {
           </div>
           <div className="uptime-cell">
             <div className="uptime-label">Release Predictability</div>
-            <div className="uptime-value warn">1/10 → 8/10</div>
+            <div className="uptime-value warn">8x Increase</div>
             <div className="uptime-subtitle">Across NCR VOYIX and Candescent</div>
           </div>
           <div className="uptime-cell">

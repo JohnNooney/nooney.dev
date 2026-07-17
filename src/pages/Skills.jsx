@@ -1,74 +1,41 @@
+import { getPillClass } from '../data/techColors';
+
 const skillCards = [
   {
     icon: '⬡',
     title: 'Cloud & DevOps',
     desc: 'Expertise in GCP, Kubernetes, and Terraform, with a focus on automated deployment pipelines and cloud-native solutions.',
-    pills: [
-      { label: 'Kubernetes', cls: 'accent' },
-      { label: 'Helm', cls: 'accent' },
-      { label: 'GCP', cls: '' },
-      { label: 'AWS', cls: '' },
-      { label: 'Terraform', cls: 'accent' },
-      { label: 'Docker', cls: '' },
-    ],
+    pills: ['Kubernetes', 'Helm', 'GCP', 'AWS', 'Terraform', 'Docker'],
   },
   {
     icon: '◈',
     title: 'CI/CD & Automation',
     desc: 'End-to-end pipeline design from code commit to production. Expertise in building automated deployment workflows, release orchestration, and continuous delivery systems that improve reliability and velocity.',
-    pills: [
-      { label: 'Jenkins', cls: 'orange' },
-      { label: 'GitHub Actions', cls: '' },
-      { label: 'Shell Scripts', cls: '' },
-      { label: 'Helm Charts', cls: '' },
-    ],
+    pills: ['Jenkins', 'GitHub Actions', 'Shell Scripts', 'Helm Charts'],
   },
   {
     icon: '☁',
     title: 'Architecture',
     desc: 'Specialized in transforming monolithic applications into scalable microservices using event-driven patterns.',
-    pills: [
-      { label: 'Microservices', cls: '' },
-      { label: 'Kafka', cls: 'green' },
-      { label: 'Spring', cls: '' },
-      { label: 'Event-Driven', cls: '' },
-    ],
+    pills: ['Microservices', 'Kafka', 'Spring', 'Event-Driven'],
   },
   {
     icon: '⌗',
     title: 'Backend Development',
     desc: 'Strong foundation in Java Spring, .NET, and Node.js, building robust and scalable APIs and data pipelines.',
-    pills: [
-      { label: 'Java', cls: 'accent' },
-      { label: 'C#', cls: 'accent' },
-      { label: '.NET', cls: '' },
-      { label: 'Node.js', cls: '' },
-      { label: 'PostgreSQL', cls: '' },
-    ],
+    pills: ['Java', 'C#', '.NET', 'Node.js', 'PostgreSQL'],
   },
   {
     icon: '◎',
     title: 'Frontend Development',
     desc: 'Experience with modern frameworks like React, Angular, and Flutter, creating responsive and interactive user interfaces.',
-    pills: [
-      { label: 'React', cls: 'green' },
-      { label: 'Angular', cls: 'green' },
-      { label: 'Flutter', cls: '' },
-      { label: 'SwiftUI', cls: '' },
-      { label: 'TypeScript', cls: '' },
-    ],
+    pills: ['React', 'Angular', 'Flutter', 'SwiftUI', 'TypeScript'],
   },
   {
     icon: '⬟',
     title: 'Languages & Tools',
     desc: 'Polyglot engineer comfortable across the full stack, from systems languages to scripting and infrastructure as code.',
-    pills: [
-      { label: 'Python', cls: 'orange' },
-      { label: 'C++', cls: '' },
-      { label: 'Swift', cls: '' },
-      { label: 'Git', cls: '' },
-      { label: 'Django', cls: '' },
-    ],
+    pills: ['Python', 'C++', 'Swift', 'Git', 'Django'],
   },
 ];
 
@@ -85,11 +52,14 @@ export default function Skills() {
             <div className="skill-card-title">{card.title}</div>
             <p className="skill-card-desc">{card.desc}</p>
             <div className="skill-pills">
-              {card.pills.map((p) => (
-                <span key={p.label} className={`pill${p.cls ? ' ' + p.cls : ''}`}>
-                  {p.label}
-                </span>
-              ))}
+              {card.pills.map((label) => {
+                const cls = getPillClass(label);
+                return (
+                  <span key={label} className={`pill${cls ? ' ' + cls : ''}`}>
+                    {label}
+                  </span>
+                );
+              })}
             </div>
           </div>
         ))}
