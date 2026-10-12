@@ -45,6 +45,7 @@ const TECH_CATEGORY = {
   TypeScript: 'orange',
   React: 'orange',
   Angular: 'orange',
+  Vue: 'orange',
   Flutter: 'orange',
   SwiftUI: 'orange',
   Spring: 'orange',

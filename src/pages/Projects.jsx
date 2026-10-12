@@ -13,10 +13,13 @@ const projects = [
   {
     dotCls: 'green',
     type: 'Personal · Open Source',
-    title: 'Hadoop Helper',
-    desc: 'Reduces Hadoop setup time from hours to minutes by providing automated UI-driven provisioning of containerized clusters, empowering developers to experiment with big data infrastructure without manual configuration.',
-    pills: ['React', 'Node.js', 'Hadoop', 'Docker'],
-    links: { github: 'https://github.com/JohnNooney/HadoopHelper' },
+    title: 'Klartext',
+    desc: 'A personal filing cabinet for German paperwork that uses Gemini to produce plain-English extractions — document type, summary, key obligations, and critical warnings. Built as an Angular host + Vue guest microfrontend pair, with Firebase end to end.',
+    pills: ['Angular', 'Vue', 'TypeScript', 'Firebase', 'Gemini'],
+    links: {
+      demo: 'https://klartext.nooney.dev',
+      github: 'https://github.com/JohnNooney/KlartextDMS',
+    },
   },
   {
     dotCls: 'green',
@@ -42,6 +45,14 @@ const projects = [
     pills: ['Unity', 'ARCore', 'Firestore', 'OpenAI'],
     links: {},
   }
+  // {
+  //   dotCls: 'green',
+  //   type: 'Personal · Open Source',
+  //   title: 'Hadoop Helper',
+  //   desc: 'Reduces Hadoop setup time from hours to minutes by providing automated UI-driven provisioning of containerized clusters, empowering developers to experiment with big data infrastructure without manual configuration.',
+  //   pills: ['React', 'Node.js', 'Hadoop', 'Docker'],
+  //   links: { github: 'https://github.com/JohnNooney/HadoopHelper' },
+  // },
   // {
   //   dotCls: 'orange',
   //   type: 'Collaboration · In Progress',
